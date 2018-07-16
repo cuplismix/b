@@ -122,78 +122,37 @@ def menuHelp():
 		key = settings['keyCommand']
 	else:
 		key = ''
-	menuHelp =	"[ Help Message ]" + "\n" + \
-				"| • " + key + "Help" + "\n" + \
-				"| • " + key + "Translate" + "\n" + \
-				"| • " + key + "TextToSpeech" + "\n" + \
-				"[ Status Command ]" + "\n" + \
-				"| • " + key + "Logout" + "\n" + \
-				"| • " + key + "Restart" + "\n" + \
-				"| • " + key + "Runtime" + "\n" + \
-				"| • " + key + "Speed" + "\n" + \
-				"| • " + key + "Status" + "\n" + \
-				"[ Settings Command ]" + "\n" + \
-				"| • " + key + "AutoAdd 「On/Off」" + "\n" + \
-				"| • " + key + "AutoJoin 「On/Off」" + "\n" + \
-				"| • " + key + "AutoJoinTicket 「On/Off」" + "\n" + \
-				"| • " + key + "AutoRead 「On/Off」" + "\n" + \
-				"| • " + key + "AutoRespon 「On/Off」" + "\n" + \
-				"| • " + key + "CheckContact 「On/Off」" + "\n" + \
-				"| • " + key + "CheckPost 「On/Off」" + "\n" + \
-				"| • " + key + "CheckSticker 「On/Off」" + "\n" + \
-				"| • " + key + "DetectUnsend 「On/Off」" + "\n" + \
-				"| • " + key + "SetKey: 「text」" + "\n" + \
-				"| • " + key + "SetAutoAddMessage: 「text」" + "\n" + \
-				"| • " + key + "SetAutoResponMessage: 「text」" + "\n" + \
-				"| • " + key + "SetAutoJoinMessage: 「Text」" + "\n" + \
-				"[ Self Command ]" + "\n" + \
-				"| • " + key + "ChangeName: 「Text」" + "\n" + \
-				"| • " + key + "ChangeBio: 「Text」" + "\n" + \
-				"| • " + key + "Me" + "\n" + \
-				"| • " + key + "MyMid" + "\n" + \
-				"| • " + key + "MyName" + "\n" + \
-				"| • " + key + "MyBio" + "\n" + \
-				"| • " + key + "MyPicture" + "\n" + \
-				"| • " + key + "MyVideoProfile" + "\n" + \
-				"| • " + key + "MyCover" + "\n" + \
-				"| • " + key + "MyProfile" + "\n" + \
-				"| • " + key + "GetMid @Mention" + "\n" + \
-				"| • " + key + "GetName @Mention" + "\n" + \
-				"| • " + key + "GetBio @Mention" + "\n" + \
-				"| • " + key + "GetPicture @Mention" + "\n" + \
-				"| • " + key + "GetVideoProfile @Mention" + "\n" + \
-				"| • " + key + "GetCover @Mention" + "\n" + \
-				"| • " + key + "CloneProfile @Mention" + "\n" + \
-				"| • " + key + "RestoreProfile" + "\n" + \
-				"| • " + key + "BackupProfile" + "\n" + \
-				"| • " + key + "FriendList" + "\n" + \
-				"| • " + key + "FriendInfo 「Number」" + "\n" + \
-				"| • " + key + "BlockList" + "\n" + \
-				"| • " + key + "FriendBroadcast" + "\n" + \
-				"| • " + key + "ChangePictureProfile" + "\n" + \
-				"[ Group Command ]" + "\n" + \
-				"| • " + key + "ChangeGroupName: 「Text」" + "\n" + \
-				"| • " + key + "GroupCreator" + "\n" + \
-				"| • " + key + "GroupID" + "\n" + \
-				"| • " + key + "GroupName" + "\n" + \
-				"| • " + key + "GroupPicture" + "\n" + \
-				"| • " + key + "OpenQR" + "\n" + \
-				"| • " + key + "CloseQR" + "\n" + \
-				"| • " + key + "GroupList" + "\n" + \
-				"| • " + key + "MemberList" + "\n" + \
-				"| • " + key + "PendingList" + "\n" + \
-				"| • " + key + "GroupInfo" + "\n" + \
-				"| • " + key + "GroupBroadcast: 「Text」" + "\n" + \
-				"| • " + key + "ChangeGroupPicture" + "\n" + \
-				"[ Special Command ]" + "\n" + \
-				"| • " + key + "Mimic 「On/Off」" + "\n" + \
-				"| • " + key + "MimicList" + "\n" + \
-				"| • " + key + "MimicAdd @Mention" + "\n" + \
-				"| • " + key + "MimicDel @Mention" + "\n" + \
-				"| • " + key + "Mention" + "\n" + \
-				"| • " + key + "SpyBot 「On/Off」" + "\n" + \
-				"| • " + key + "Scan" + "\n" + \
-				"| • -= UnknownCode Project =-"
+	menuHelp =	"| • | < ʜᴇʟᴘ ᴍᴇssᴀɢᴇ >" + "\n" + \
+				"| • |" + key + "ʜᴇʟᴘ" + "\n" + \
+				"| • |" + key + "sᴀʏʜᴇʟᴘ" + "\n" + \
+				"| • |" + key + "ᴄʀᴇᴀᴛᴏʀ" + "\n" + \
+				"| • |" + key + "ʟᴏɢᴏᴜᴛ" + "\n" + \
+				"| • |" + key + "ʀᴇsᴛᴀʀᴛ" + "\n" + \
+				"| • |" + key + "sᴘᴇᴇᴅʙᴏᴛ" + "\n" + \
+				"| • |" + key + "sᴛᴀᴛᴜsʙᴏᴛ" + "\n" + \
+				"| • |" + key + "ᴜɴsᴇɴᴅᴄʜᴀᴛ 「On/Off」" + "\n" + \
+				"| • |" + key + "ᴍᴇ" + "\n" + \
+				"| • |" + key + "ᴍʏᴍɪᴅ" + "\n" + \
+				"| • |" + key + "ᴍʏɴᴀᴍᴇ" + "\n" + \
+				"| • |" + key + "ᴍʏʙɪᴏ" + "\n" + \
+				"| • |" + key + "ᴍʏᴘɪᴄᴛᴜʀᴇ" + "\n" + \
+				"| • |" + key + "ᴍʏᴠɪᴅᴇᴏᴘʀᴏғɪʟᴇ" + "\n" + \
+				"| • |" + key + "ᴍʏᴄᴏᴠᴇʀ" + "\n" + \
+				"| • |" + key + "sᴛᴀʟᴋʙɪᴏ" + "\n" + \
+				"| • |" + key + "sᴛᴀʟᴋᴘɪᴄᴛᴜʀᴇ" + "\n" + \
+				"| • |" + key + "sᴛᴀʟᴋᴠɪᴅᴇᴏᴘʀᴏғɪʟᴇ" + "\n" + \
+				"| • |" + key + "sᴛᴀʟᴋᴄᴏᴠᴇʀ" + "\n" + \
+				"| • |" + key + "ғʀɪᴇɴᴅʟɪsᴛ" + "\n" + \
+				"| • |" + key + "ᴍᴇᴍʙᴇʀʟɪsᴛ" + "\n" + \
+				"| • |" + key + "ɢʀᴏᴜᴘɪɴғᴏ" + "\n" + \
+				"| • |" + key + "ᴍᴀᴄʀᴏ「ᴏɴ/ᴏғғ」" + "\n" + \
+				"| • |" + key + "ᴍᴀᴄʀᴏʟɪsᴛ" + "\n" + \
+				"| • |" + key + "ᴍᴀᴄʀᴏᴀᴅᴅ「ᴍᴇɴᴛɪᴏɴ」" + "\n" + \
+				"| • |" + key + "ᴍᴀᴄʀᴏᴅᴇʟ「ᴍᴇɴᴛɪᴏɴ」" + "\n" + \
+				"| • |" + key + "ᴍᴇɴᴛɪᴏɴ" + "\n" + \
+				"| • |" + key + "sᴘʏʙᴏᴛ「ᴏɴ/ᴏғғ/ʀᴇsᴇᴛ」" + "\n" + \
+				"| • |" + key + "sᴄᴀɴ" + "\n" + \
+				"| • | < ᴜɴᴋɴᴏᴡɴᴄᴏᴅᴇ ᴘʀᴏᴊᴇᴄᴛ >"
 	return menuHelp
 
 def menuTextToSpeech():
