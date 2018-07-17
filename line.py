@@ -145,7 +145,7 @@ def menuHelp():
 				"| • | " + key + "ғʀɪᴇɴᴅʟɪsᴛ" + "\n" + \
 				"| • | " + key + "ᴍᴇᴍʙᴇʀʟɪsᴛ" + "\n" + \
 				"| • | " + key + "ɢʀᴏᴜᴘɪɴғᴏ" + "\n" + \
-				"| • | " + key + "ᴍᴀᴄʀᴏ「ᴏɴ/ᴏғғ」" + "\n" + \
+				"| • | " + key + "ᴍᴀᴄʀᴏ [ ᴏɴ/ᴏғғ ]" + "\n" + \
 				"| • | " + key + "ᴍᴀᴄʀᴏʟɪsᴛ" + "\n" + \
 				"| • | " + key + "ᴍᴀᴄʀᴏᴀᴅᴅ [ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
 				"| • | " + key + "ᴍᴀᴄʀᴏᴅᴇʟ[ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
@@ -164,7 +164,7 @@ def displayCreator():
 				"| • | " + key + "ᴀᴜᴛʜᴏʀ : ᴅᴡɪᴡɪʀᴀɴᴀᴛʜᴀ" + "\n" + \
 				"| • | " + key + "ᴇᴍᴀɪʟ : dwiwiranatha@gmail.com" + "\n" + \
 				"| • | " + key + "ʏᴛ ᴄʜᴀɴɴᴇʟ : bit.ly/2uzmcGy" + "\n" + \
-				"| • | " + key + "ᴄᴏɴᴛᴀᴄᴛ ᴀᴅᴍɪɴ : line.me/ti/p/_59r6yG7J8" + "\n" + \
+				"| • | " + key + "ᴄᴏɴᴛᴀᴄᴛ ᴀᴅᴍɪɴ : line.me/ti/p/CmNvfCneIG" + "\n" + \
 				"| • | < ᴜɴᴋɴᴏᴡɴ ᴄᴏᴅᴇ >"
 	return displayCreator
 
@@ -402,10 +402,9 @@ def clientBot(op):
 							client.sendMessage(to, "\sᴇɴᴅɪɴɢ ᴍᴇssᴀɢᴇs {}/s".format(str(elapsed_time)))
 						elif cmd == "creator":
 							aboutCreator = displayCreator()
-							contact = client.getContact(sender)
 							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-							name = contact.displayName
-							link = "https://2.bp.blogspot.com/-gFnscTAEZjE/W001hFKKSvI/AAAAAAAAACQ/7M2Q8o5htogNPt7WMxFAwE6Tu-6Avg6MQCLcBGAs/s1600/giphy.gif"
+							name = "dwiwiranatha ηF"
+							link = "line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, aboutCreator, icon, name, link)
 						elif cmd.startswith("setkey: "):
 							sep = text.split(" ")
@@ -417,17 +416,15 @@ def clientBot(op):
 								client.sendMessage(to, "Berhasil mengubah set key command menjadi : 「{}」".format(str(key).lower()))
 						elif cmd == "help":
 							helpMessage = menuHelp()
-							contact = client.getContact(sender)
 							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-							name = contact.displayName
-							link = "https://2.bp.blogspot.com/-gFnscTAEZjE/W001hFKKSvI/AAAAAAAAACQ/7M2Q8o5htogNPt7WMxFAwE6Tu-6Avg6MQCLcBGAs/s1600/giphy.gif"
+							name = "dwiwiranatha ηF"
+							link = "line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, helpMessage, icon, name, link)
 						elif cmd == "texttospeech":
 							helpTextToSpeech = menuTextToSpeech()
-							contact = client.getContact(sender)
 							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-							name = contact.displayName
-							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
+							name = "dwiwiranatha ηF"
+							link = "line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, helpTextToSpeech, icon, name, link)
 						elif cmd == "translate":
 							helpTranslate = menuTranslate()
