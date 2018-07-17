@@ -127,7 +127,7 @@ def menuHelp():
 				"| • | " + key + "sᴀʏʜᴇʟᴘ" + "\n" + \
 				"| • | " + key + "ᴄʀᴇᴀᴛᴏʀ" + "\n" + \
 				"| • | " + key + "ʟᴏɢᴏᴜᴛ" + "\n" + \
-				"| • | " + key + "ʀᴇsᴛᴀʀᴛ" + "\n" + \
+				"| • | " + key + "ʀᴇsᴛᴀʀᴛʙᴏᴛ" + "\n" + \
 				"| • | " + key + "sᴘᴇᴇᴅʙᴏᴛ" + "\n" + \
 				"| • | " + key + "sᴛᴀᴛᴜsʙᴏᴛ" + "\n" + \
 				"| • | " + key + "ᴜɴsᴇɴᴅᴄʜᴀᴛ [ ᴏɴ/ᴏғғ ]" + "\n" + \
@@ -376,22 +376,30 @@ def clientBot(op):
 						to = receiver
 					if msg.contentType == 0:
 						if cmd == "logout":
-							client.sendMessage(to, "Berhasil mematikan selfbot")
+							client.sendMessage(to, "sʜᴜᴛᴛɪɴɢ ᴅᴏᴡɴ . . .")
 							sys.exit("[ INFO ] BOT SHUTDOWN")
 							return
-						elif cmd == "restart":
-							client.sendMessage(to, "Berhasil mereset bot")
+						elif cmd == "restartbot":
+							client.sendMessage(to, "ʀᴇsᴛᴀʀᴛɪɴɢ . . .")
 							restartBot()
-						elif cmd == "speed":
+						elif cmd == "speedbot":
 							start = time.time()
-							client.sendMessage(to, "Menghitung kecepatan...")
+							client.sendMessage(to, "ᴄᴏɴɴᴇᴄᴛɪɴɢ . . .")
 							elapsed_time = time.time() - start
-							client.sendMessage(to, "Kecepatan mengirim pesan {} detik".format(str(elapsed_time)))
-						elif cmd == "runtime":
-							timeNow = time.time()
-							runtime = timeNow - clientStart
-							runtime = timeChange(runtime)
-							client.sendMessage(to, "Selfbot telah aktif selama {}".format(str(runtime)))
+							client.sendMessage(to, "\sᴇɴᴅɪɴɢ ᴍᴇssᴀɢᴇs {}/s".format(str(elapsed_time)))
+						elif cmd == "creator":
+                                			name = "Instagram"
+							link = "https://www.instagram.com/{}".format(data["result"]["username"])
+							try:
+                                    				ret_ = "| • | < ᴀʙᴏᴜᴛ ʙᴏᴛ >"
+                                    				ret_ += "\n| • | ᴀᴜᴛʜᴏʀ : ᴅᴡɪᴡɪʀᴀɴᴀᴛʜᴀ"
+                                    				ret_ += "\n| • | ᴇᴍᴀɪʟ : dwiwiranatha@gmail.com"
+								ret_ += "\n| • | ʏᴛ ᴄʜᴀɴɴᴇʟ : bit.ly/2uzmcGy"
+                                    				ret_ += "\n| • | ᴄᴏɴᴛᴀᴄᴛ ᴀᴅᴍɪɴ : line.me/ti/p/_59r6yG7J8"
+                                    				#client.sendMessage(to, str(ret_))
+								client.sendFooter(to, ret_, name, link)
+                                			except Exception as e:
+								logError(error)
 						elif cmd.startswith("setkey: "):
 							sep = text.split(" ")
 							key = text.replace(sep[0] + " ","")
