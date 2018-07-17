@@ -388,7 +388,9 @@ def clientBot(op):
 							elapsed_time = time.time() - start
 							client.sendMessage(to, "\sᴇɴᴅɪɴɢ ᴍᴇssᴀɢᴇs {}/s".format(str(elapsed_time)))
 						elif cmd == "creator":
-                                			name = "Creator"
+                                			contact = client.getContact(sender)
+							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
+							name = "Creator"
 							link = "https://bit.ly/2uzmcGy"
 							try:
                                     				ret_ = "| • | < ᴀʙᴏᴜᴛ ʙᴏᴛ >"
@@ -397,7 +399,7 @@ def clientBot(op):
 								ret_ += "\n| • | ʏᴛ ᴄʜᴀɴɴᴇʟ : bit.ly/2uzmcGy"
                                     				ret_ += "\n| • | ᴄᴏɴᴛᴀᴄᴛ ᴀᴅᴍɪɴ : line.me/ti/p/_59r6yG7J8"
                                     				#client.sendMessage(to, str(ret_))
-								client.sendFooter(to, ret_, name, link)
+								client.sendFooter(to, ret_,icon ,name, link)
                                 			except Exception as e:
 								logError(error)
 						elif cmd.startswith("setkey: "):
