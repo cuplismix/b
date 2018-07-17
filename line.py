@@ -388,11 +388,11 @@ def clientBot(op):
 							elapsed_time = time.time() - start
 							client.sendMessage(to, "\sᴇɴᴅɪɴɢ ᴍᴇssᴀɢᴇs {}/s".format(str(elapsed_time)))
 						elif cmd == "creator":
-                                			contact = client.getContact(sender)
-							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-							name = "Creator"
-							link = "https://bit.ly/2uzmcGy"
-							try:
+                                			try:
+								contact = client.getContact(sender)
+								icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
+								name = "Creator"
+								link = "https://bit.ly/2uzmcGy"
                                     				ret_ = "| • | < ᴀʙᴏᴜᴛ ʙᴏᴛ >"
                                     				ret_ += "\n| • | ᴀᴜᴛʜᴏʀ : ᴅᴡɪᴡɪʀᴀɴᴀᴛʜᴀ"
                                     				ret_ += "\n| • | ᴇᴍᴀɪʟ : dwiwiranatha@gmail.com"
