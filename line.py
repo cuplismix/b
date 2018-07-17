@@ -388,8 +388,8 @@ def clientBot(op):
 							elapsed_time = time.time() - start
 							client.sendMessage(to, "\sᴇɴᴅɪɴɢ ᴍᴇssᴀɢᴇs {}/s".format(str(elapsed_time)))
 						elif cmd == "creator":
-                                			name = "Instagram"
-							link = "https://www.instagram.com/{}".format(data["result"]["username"])
+                                			name = "Creator"
+							link = "https://bit.ly/2uzmcGy"
 							try:
                                     				ret_ = "| • | < ᴀʙᴏᴜᴛ ʙᴏᴛ >"
                                     				ret_ += "\n| • | ᴀᴜᴛʜᴏʀ : ᴅᴡɪᴡɪʀᴀɴᴀᴛʜᴀ"
