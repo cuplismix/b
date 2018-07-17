@@ -413,7 +413,7 @@ def clientBot(op):
 							contact = client.getContact(sender)
 							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
 							name = contact.displayName
-							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
+							link = "https://2.bp.blogspot.com/-gFnscTAEZjE/W001hFKKSvI/AAAAAAAAACQ/7M2Q8o5htogNPt7WMxFAwE6Tu-6Avg6MQCLcBGAs/s1600/giphy.gif"
 							client.sendFooter(to, helpMessage, icon, name, link)
 						elif cmd == "texttospeech":
 							helpTextToSpeech = menuTextToSpeech()
