@@ -155,6 +155,19 @@ def menuHelp():
 				"| • | < ᴜɴᴋɴᴏᴡɴ ᴄᴏᴅᴇ >"
 	return menuHelp
 
+def displayCreator():
+	if settings['setKey'] == True:
+		key = settings['keyCommand']
+	else:
+		key = ''
+	displayCreator =	"| • | < ᴀʙᴏᴜᴛ ʙᴏᴛ >" + "\n" + \
+				"| • | " + key + "ᴀᴜᴛʜᴏʀ : ᴅᴡɪᴡɪʀᴀɴᴀᴛʜᴀ" + "\n" + \
+				"| • | " + key + "ᴇᴍᴀɪʟ : dwiwiranatha@gmail.com" + "\n" + \
+				"| • | " + key + "ʏᴛ ᴄʜᴀɴɴᴇʟ : bit.ly/2uzmcGy" + "\n" + \
+				"| • | " + key + "ᴄᴏɴᴛᴀᴄᴛ ᴀᴅᴍɪɴ : line.me/ti/p/_59r6yG7J8" + "\n" + \
+				"| • | < ᴜɴᴋɴᴏᴡɴ ᴄᴏᴅᴇ >"
+	return displayCreator
+
 def menuTextToSpeech():
 	if settings['setKey'] == True:
 		key = settings['keyCommand']
@@ -388,20 +401,12 @@ def clientBot(op):
 							elapsed_time = time.time() - start
 							client.sendMessage(to, "\sᴇɴᴅɪɴɢ ᴍᴇssᴀɢᴇs {}/s".format(str(elapsed_time)))
 						elif cmd == "creator":
-                                			try:
-								contact = client.getContact(sender)
-								icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-								name = "Creator"
-								link = "https://bit.ly/2uzmcGy"
-                                    				ret_ = "| • | < ᴀʙᴏᴜᴛ ʙᴏᴛ >"
-                                    				ret_ += "\n| • | ᴀᴜᴛʜᴏʀ : ᴅᴡɪᴡɪʀᴀɴᴀᴛʜᴀ"
-                                    				ret_ += "\n| • | ᴇᴍᴀɪʟ : dwiwiranatha@gmail.com"
-								ret_ += "\n| • | ʏᴛ ᴄʜᴀɴɴᴇʟ : bit.ly/2uzmcGy"
-                                    				ret_ += "\n| • | ᴄᴏɴᴛᴀᴄᴛ ᴀᴅᴍɪɴ : line.me/ti/p/_59r6yG7J8"
-                                    				#client.sendMessage(to, str(ret_))
-								client.sendFooter(to, ret_,icon ,name, link)
-                                			except Exception as e:
-								logError(error)
+							aboutCreator = displayCreator()
+							contact = client.getContact(sender)
+							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
+							name = contact.displayName
+							link = "https://2.bp.blogspot.com/-gFnscTAEZjE/W001hFKKSvI/AAAAAAAAACQ/7M2Q8o5htogNPt7WMxFAwE6Tu-6Avg6MQCLcBGAs/s1600/giphy.gif"
+							client.sendFooter(to, aboutCreator, icon, name, link)
 						elif cmd.startswith("setkey: "):
 							sep = text.split(" ")
 							key = text.replace(sep[0] + " ","")
