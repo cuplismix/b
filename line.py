@@ -402,7 +402,7 @@ def clientBot(op):
 							client.sendMessage(to, "\sᴇɴᴅɪɴɢ ᴍᴇssᴀɢᴇs {}/s".format(str(elapsed_time)))
 						elif cmd == "creator":
 							aboutCreator = displayCreator()
-							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
+							icon = "https://3.bp.blogspot.com/-S9ci6DHgNnE/WIq5Xb17bwI/AAAAAAAACVk/WoQFOrbfbtwAjEEMHYY-pkw5mYCKYcykwCLcB/s1600/vektor%2Bline.png"
 							name = "dwiwiranatha ηF"
 							link = "line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, aboutCreator, icon, name, link)
@@ -416,7 +416,7 @@ def clientBot(op):
 								client.sendMessage(to, "Berhasil mengubah set key command menjadi : 「{}」".format(str(key).lower()))
 						elif cmd == "help":
 							helpMessage = menuHelp()
-							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
+							icon = "https://3.bp.blogspot.com/-S9ci6DHgNnE/WIq5Xb17bwI/AAAAAAAACVk/WoQFOrbfbtwAjEEMHYY-pkw5mYCKYcykwCLcB/s1600/vektor%2Bline.png"
 							name = "dwiwiranatha ηF"
 							link = "line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, helpMessage, icon, name, link)
