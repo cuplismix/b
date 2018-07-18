@@ -173,179 +173,15 @@ def menuTextToSpeech():
 		key = settings['keyCommand']
 	else:
 		key = ''
-	menuTextToSpeech =	"╔══[ Text To Speech ]" + "\n" + \
-						"╠ " + key + "af : Afrikaans" + "\n" + \
-						"╠ " + key + "sq : Albanian" + "\n" + \
-						"╠ " + key + "ar : Arabic" + "\n" + \
-						"╠ " + key + "hy : Armenian" + "\n" + \
-						"╠ " + key + "bn : Bengali" + "\n" + \
-						"╠ " + key + "ca : Catalan" + "\n" + \
-						"╠ " + key + "zh : Chinese" + "\n" + \
-						"╠ " + key + "zh-cn : Chinese (Mandarin/China)" + "\n" + \
-						"╠ " + key + "zh-tw : Chinese (Mandarin/Taiwan)" + "\n" + \
-						"╠ " + key + "zh-yue : Chinese (Cantonese)" + "\n" + \
-						"╠ " + key + "hr : Croatian" + "\n" + \
-						"╠ " + key + "cs : Czech" + "\n" + \
-						"╠ " + key + "da : Danish" + "\n" + \
-						"╠ " + key + "nl : Dutch" + "\n" + \
-						"╠ " + key + "en : English" + "\n" + \
-						"╠ " + key + "en-au : English (Australia)" + "\n" + \
-						"╠ " + key + "en-uk : English (United Kingdom)" + "\n" + \
-						"╠ " + key + "en-us : English (United States)" + "\n" + \
-						"╠ " + key + "eo : Esperanto" + "\n" + \
-						"╠ " + key + "fi : Finnish" + "\n" + \
-						"╠ " + key + "fr : French" + "\n" + \
-						"╠ " + key + "de : German" + "\n" + \
-						"╠ " + key + "el : Greek" + "\n" + \
-						"╠ " + key + "hi : Hindi" + "\n" + \
-						"╠ " + key + "hu : Hungarian" + "\n" + \
-						"╠ " + key + "is : Icelandic" + "\n" + \
-						"╠ " + key + "id : Indonesian" + "\n" + \
-						"╠ " + key + "it : Italian" + "\n" + \
-						"╠ " + key + "ja : Japanese" + "\n" + \
-						"╠ " + key + "km : Khmer (Cambodian)" + "\n" + \
-						"╠ " + key + "ko : Korean" + "\n" + \
-						"╠ " + key + "la : Latin" + "\n" + \
-						"╠ " + key + "lv : Latvian" + "\n" + \
-						"╠ " + key + "mk : Macedonian" + "\n" + \
-						"╠ " + key + "no : Norwegian" + "\n" + \
-						"╠ " + key + "pl : Polish" + "\n" + \
-						"╠ " + key + "pt : Portuguese" + "\n" + \
-						"╠ " + key + "ro : Romanian" + "\n" + \
-						"╠ " + key + "ru : Russian" + "\n" + \
-						"╠ " + key + "sr : Serbian" + "\n" + \
-						"╠ " + key + "si : Sinhala" + "\n" + \
-						"╠ " + key + "sk : Slovak" + "\n" + \
-						"╠ " + key + "es : Spanish" + "\n" + \
-						"╠ " + key + "es-es : Spanish (Spain)" + "\n" + \
-						"╠ " + key + "es-us : Spanish (United States)" + "\n" + \
-						"╠ " + key + "sw : Swahili" + "\n" + \
-						"╠ " + key + "sv : Swedish" + "\n" + \
-						"╠ " + key + "ta : Tamil" + "\n" + \
-						"╠ " + key + "th : Thai" + "\n" + \
-						"╠ " + key + "tr : Turkish" + "\n" + \
-						"╠ " + key + "uk : Ukrainian" + "\n" + \
-						"╠ " + key + "vi : Vietnamese" + "\n" + \
-						"╠ " + key + "cy : Welsh" + "\n" + \
-						"╚══[ Jangan Typo ]" + "\n" + "\n\n" + \
-						"Contoh : " + key + "say-id chiken"
+	menuTextToSpeech = "| • | < ᴛᴇxᴛ ᴛᴏ sᴘᴇᴇᴄʜ >" + "\n" + \
+                        		"| • | " + key + "ɪᴅ : ɪɴᴅᴏɴᴇsɪᴀ" + "\n" + \
+                       	 		"| • | " + key + "ᴇɴ : ᴇɴɢʟɪsʜ" + "\n" + \
+                       			"| • | " + key + "ᴊᴀ : ᴊᴀᴘᴀɴᴇsᴇ" + "\n" + \
+                        		"| • | " + key + "ᴋᴏ : ᴋᴏʀᴇᴀɴ" + "\n" + \
+                        		"| • | " + key + "ᴛʜ : ᴛʜᴀɪʟᴀɴᴅ" + "\n" + \
+                        		"| • | " + key + "ᴢʜ : ᴄʜɪɴᴀ" + "\n" + \
+                        		"ᴇxᴀᴍᴘʟᴇ : " + key + "/sᴀʏ-ɪᴅ ᴅᴡɪᴡɪʀᴀɴᴀᴛʜᴀ"
 	return menuTextToSpeech
-
-def menuTranslate():
-	if settings['setKey'] == True:
-		key = settings['keyCommand']
-	else:
-		key = ''
-	menuTranslate =	"╔══[ Translate ]" + "\n" + \
-					"╠ " + key + "af : afrikaans" + "\n" + \
-					"╠ " + key + "sq : albanian" + "\n" + \
-					"╠ " + key + "am : amharic" + "\n" + \
-					"╠ " + key + "ar : arabic" + "\n" + \
-					"╠ " + key + "hy : armenian" + "\n" + \
-					"╠ " + key + "az : azerbaijani" + "\n" + \
-					"╠ " + key + "eu : basque" + "\n" + \
-					"╠ " + key + "be : belarusian" + "\n" + \
-					"╠ " + key + "bn : bengali" + "\n" + \
-					"╠ " + key + "bs : bosnian" + "\n" + \
-					"╠ " + key + "bg : bulgarian" + "\n" + \
-					"╠ " + key + "ca : catalan" + "\n" + \
-					"╠ " + key + "ceb : cebuano" + "\n" + \
-					"╠ " + key + "ny : chichewa" + "\n" + \
-					"╠ " + key + "zh-cn : chinese (simplified)" + "\n" + \
-					"╠ " + key + "zh-tw : chinese (traditional)" + "\n" + \
-					"╠ " + key + "co : corsican" + "\n" + \
-					"╠ " + key + "hr : croatian" + "\n" + \
-					"╠ " + key + "cs : czech" + "\n" + \
-					"╠ " + key + "da : danish" + "\n" + \
-					"╠ " + key + "nl : dutch" + "\n" + \
-					"╠ " + key + "en : english" + "\n" + \
-					"╠ " + key + "eo : esperanto" + "\n" + \
-					"╠ " + key + "et : estonian" + "\n" + \
-					"╠ " + key + "tl : filipino" + "\n" + \
-					"╠ " + key + "fi : finnish" + "\n" + \
-					"╠ " + key + "fr : french" + "\n" + \
-					"╠ " + key + "fy : frisian" + "\n" + \
-					"╠ " + key + "gl : galician" + "\n" + \
-					"╠ " + key + "ka : georgian" + "\n" + \
-					"╠ " + key + "de : german" + "\n" + \
-					"╠ " + key + "el : greek" + "\n" + \
-					"╠ " + key + "gu : gujarati" + "\n" + \
-					"╠ " + key + "ht : haitian creole" + "\n" + \
-					"╠ " + key + "ha : hausa" + "\n" + \
-					"╠ " + key + "haw : hawaiian" + "\n" + \
-					"╠ " + key + "iw : hebrew" + "\n" + \
-					"╠ " + key + "hi : hindi" + "\n" + \
-					"╠ " + key + "hmn : hmong" + "\n" + \
-					"╠ " + key + "hu : hungarian" + "\n" + \
-					"╠ " + key + "is : icelandic" + "\n" + \
-					"╠ " + key + "ig : igbo" + "\n" + \
-					"╠ " + key + "id : indonesian" + "\n" + \
-					"╠ " + key + "ga : irish" + "\n" + \
-					"╠ " + key + "it : italian" + "\n" + \
-					"╠ " + key + "ja : japanese" + "\n" + \
-					"╠ " + key + "jw : javanese" + "\n" + \
-					"╠ " + key + "kn : kannada" + "\n" + \
-					"╠ " + key + "kk : kazakh" + "\n" + \
-					"╠ " + key + "km : khmer" + "\n" + \
-					"╠ " + key + "ko : korean" + "\n" + \
-					"╠ " + key + "ku : kurdish (kurmanji)" + "\n" + \
-					"╠ " + key + "ky : kyrgyz" + "\n" + \
-					"╠ " + key + "lo : lao" + "\n" + \
-					"╠ " + key + "la : latin" + "\n" + \
-					"╠ " + key + "lv : latvian" + "\n" + \
-					"╠ " + key + "lt : lithuanian" + "\n" + \
-					"╠ " + key + "lb : luxembourgish" + "\n" + \
-					"╠ " + key + "mk : macedonian" + "\n" + \
-					"╠ " + key + "mg : malagasy" + "\n" + \
-					"╠ " + key + "ms : malay" + "\n" + \
-					"╠ " + key + "ml : malayalam" + "\n" + \
-					"╠ " + key + "mt : maltese" + "\n" + \
-					"╠ " + key + "mi : maori" + "\n" + \
-					"╠ " + key + "mr : marathi" + "\n" + \
-					"╠ " + key + "mn : mongolian" + "\n" + \
-					"╠ " + key + "my : myanmar (burmese)" + "\n" + \
-					"╠ " + key + "ne : nepali" + "\n" + \
-					"╠ " + key + "no : norwegian" + "\n" + \
-					"╠ " + key + "ps : pashto" + "\n" + \
-					"╠ " + key + "fa : persian" + "\n" + \
-					"╠ " + key + "pl : polish" + "\n" + \
-					"╠ " + key + "pt : portuguese" + "\n" + \
-					"╠ " + key + "pa : punjabi" + "\n" + \
-					"╠ " + key + "ro : romanian" + "\n" + \
-					"╠ " + key + "ru : russian" + "\n" + \
-					"╠ " + key + "sm : samoan" + "\n" + \
-					"╠ " + key + "gd : scots gaelic" + "\n" + \
-					"╠ " + key + "sr : serbian" + "\n" + \
-					"╠ " + key + "st : sesotho" + "\n" + \
-					"╠ " + key + "sn : shona" + "\n" + \
-					"╠ " + key + "sd : sindhi" + "\n" + \
-					"╠ " + key + "si : sinhala" + "\n" + \
-					"╠ " + key + "sk : slovak" + "\n" + \
-					"╠ " + key + "sl : slovenian" + "\n" + \
-					"╠ " + key + "so : somali" + "\n" + \
-					"╠ " + key + "es : spanish" + "\n" + \
-					"╠ " + key + "su : sundanese" + "\n" + \
-					"╠ " + key + "sw : swahili" + "\n" + \
-					"╠ " + key + "sv : swedish" + "\n" + \
-					"╠ " + key + "tg : tajik" + "\n" + \
-					"╠ " + key + "ta : tamil" + "\n" + \
-					"╠ " + key + "te : telugu" + "\n" + \
-					"╠ " + key + "th : thai" + "\n" + \
-					"╠ " + key + "tr : turkish" + "\n" + \
-					"╠ " + key + "uk : ukrainian" + "\n" + \
-					"╠ " + key + "ur : urdu" + "\n" + \
-					"╠ " + key + "uz : uzbek" + "\n" + \
-					"╠ " + key + "vi : vietnamese" + "\n" + \
-					"╠ " + key + "cy : welsh" + "\n" + \
-					"╠ " + key + "xh : xhosa" + "\n" + \
-					"╠ " + key + "yi : yiddish" + "\n" + \
-					"╠ " + key + "yo : yoruba" + "\n" + \
-					"╠ " + key + "zu : zulu" + "\n" + \
-					"╠ " + key + "fil : Filipino" + "\n" + \
-					"╠ " + key + "he : Hebrew" + "\n" + \
-					"╚══[ Jangan Typo ]" + "\n" + "\n\n" + \
-					"Contoh : " + key + "tr-id chiken"
-	return menuTranslate
 
 def clientBot(op):
 	try:
@@ -403,7 +239,7 @@ def clientBot(op):
 						elif cmd == "creator":
 							aboutCreator = displayCreator()
 							contact = client.getContact(sender)
-							icon = "https://cdn3.iconfinder.com/data/icons/online-marketing-vol-1/72/24-512.png"
+							icon = "https://cdn.icon-icons.com/icons2/909/PNG/512/code_icon-icons.com_70999.png"
 							name = "dwiwiranatha ηF"
 							link = "https://line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, aboutCreator, icon, name, link)
@@ -418,29 +254,21 @@ def clientBot(op):
 						elif cmd == "help":
 							helpMessage = menuHelp()
 							contact = client.getContact(sender)
-							icon = "https://cdn3.iconfinder.com/data/icons/online-marketing-vol-1/72/24-512.png"
+							icon = "https://cdn.icon-icons.com/icons2/909/PNG/512/code_icon-icons.com_70999.png"
 							name = "dwiwiranatha ηF"
-							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
+							link = "https://line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, helpMessage, icon, name, link)
-						elif cmd == "texttospeech":
+						elif cmd == "sayhelp":
 							helpTextToSpeech = menuTextToSpeech()
 							contact = client.getContact(sender)
-							icon = "https://cdn3.iconfinder.com/data/icons/online-marketing-vol-1/72/24-512.png"
+							icon = "https://cdn.icon-icons.com/icons2/909/PNG/512/code_icon-icons.com_70999.png"
 							name = "dwiwiranatha ηF"
-							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
+							link = "https://line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, helpTextToSpeech, icon, name, link)
-						elif cmd == "translate":
-							helpTranslate = menuTranslate()
-							contact = client.getContact(sender)
-							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-							name = contact.displayName
-							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
-							client.sendFooter(to, helpTranslate, icon, name, link)
-
 
 						elif cmd == "status":
 							try:
-								ret_ = "╔══[ Status ]"
+								ret_ = "| • | < sᴛᴀᴛᴜs ʙᴏᴛ >"
 								if settings["autoAdd"] == True: ret_ += "\n╠ Auto Add : ON"
 								else: ret_ += "\n╠ Auto Add : OFF"
 								if settings["autoJoin"] == True: ret_ += "\n╠ Auto Join : ON"
