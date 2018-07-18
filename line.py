@@ -403,9 +403,9 @@ def clientBot(op):
 						elif cmd == "creator":
 							aboutCreator = displayCreator()
 							contact = client.getContact(sender)
-							icon = "https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png"
+							icon = "https://cdn3.iconfinder.com/data/icons/online-marketing-vol-1/72/24-512.png"
 							name = "dwiwiranatha ηF"
-							link = "line.me/ti/p/CmNvfCneIG"
+							link = "https://line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, aboutCreator, icon, name, link)
 						elif cmd.startswith("setkey: "):
 							sep = text.split(" ")
@@ -418,16 +418,16 @@ def clientBot(op):
 						elif cmd == "help":
 							helpMessage = menuHelp()
 							contact = client.getContact(sender)
-							icon = "https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png"
+							icon = "https://cdn3.iconfinder.com/data/icons/online-marketing-vol-1/72/24-512.png"
 							name = "dwiwiranatha ηF"
-							link = "line.me/ti/p/CmNvfCneIG"
+							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
 							client.sendFooter(to, helpMessage, icon, name, link)
 						elif cmd == "texttospeech":
 							helpTextToSpeech = menuTextToSpeech()
 							contact = client.getContact(sender)
-							icon = "https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png"
+							icon = "https://cdn3.iconfinder.com/data/icons/online-marketing-vol-1/72/24-512.png"
 							name = "dwiwiranatha ηF"
-							link = "line.me/ti/p/CmNvfCneIG"
+							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
 							client.sendFooter(to, helpTextToSpeech, icon, name, link)
 						elif cmd == "translate":
 							helpTranslate = menuTranslate()
