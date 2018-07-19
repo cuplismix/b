@@ -273,7 +273,6 @@ def clientBot(op):
 								icon = "https://cdn.icon-icons.com/icons2/909/PNG/512/code_icon-icons.com_70999.png"
 								name = "dwiwiranatha ηF"
 								link = "https://line.me/ti/p/CmNvfCneIG"
-								client.sendFooter(to, aboutCreator, icon, name, link)
 								ret_ = "| • | < sᴛᴀᴛᴜs ʙᴏᴛ >"
 								if settings["detectUnsend"] == True: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏɴ"
 								else: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏғғ"
