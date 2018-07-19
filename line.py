@@ -268,9 +268,15 @@ def clientBot(op):
 							link = "https://line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, helpTextToSpeech, icon, name, link)
 
-						elif cmd == "status":
+						elif cmd == "statusbot":
 							try:
+								icon = "https://cdn.icon-icons.com/icons2/909/PNG/512/code_icon-icons.com_70999.png"
+								name = "dwiwiranatha ηF"
+								link = "https://line.me/ti/p/CmNvfCneIG"
+								client.sendFooter(to, aboutCreator, icon, name, link)
 								ret_ = "| • | < sᴛᴀᴛᴜs ʙᴏᴛ >"
+								if settings["detectUnsend"] == True: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏɴ"
+								else: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏғғ"
 								if settings["mimic"]["status"] == True: ret_ += "\n| • | ᴍᴀᴄʀᴏ : ᴏɴ"
 								else: ret_ += "\n| • | ᴍᴀᴄʀᴏ : ᴏғғ"
 								if settings["mimic"]["target"] == {}: ret_ += "\n| • | ᴍᴀᴄʀᴏʟɪsᴛ : ᴛᴀʀɢᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ"
@@ -281,12 +287,11 @@ def clientBot(op):
 									for mid in settings["mimic"]["target"]:
 										target.append(mid)
 										no += 1
-										ret_ += "\n╠ {}. @!".format(no)
+										ret_ += "\n| • | {}. @!".format(no)
 									ret_ += "\n| • | < ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ >".format(str(len(target)))
 								if settings["detectUnsend"] == True: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏɴ"
 								else: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏғғ"
-								ret_ += "\n| • | < ᴜɴᴋɴᴏᴡɴ ᴄᴏᴅᴇ >"
-								client.sendMessage(to, str(ret_))
+								client.sendFooter(to, ret_, icon, name, link)
 							except Exception as error:
 								logError(error)
 						elif cmd == "autoadd on":
@@ -753,19 +758,19 @@ def clientBot(op):
 							client.sendMessage(to, "Berhasil broadcast ke {} group".format(str(len(groups))))
 
 
-						elif cmd == 'mentionall':
+						elif cmd == 'mention':
 							group = client.getGroup(to)
 							midMembers = [contact.mid for contact in group.members]
 							midSelect = len(midMembers)//100
 							for mentionMembers in range(midSelect+1):
 								no = 0
-								ret_ = "╔══[ Mention Members ]"
+								ret_ = "| • | < ᴍᴇɴᴛɪᴏɴ ᴍᴇᴍʙᴇʀs >"
 								dataMid = []
 								for dataMention in group.members[mentionMembers*100 : (mentionMembers+1)*100]:
 									dataMid.append(dataMention.mid)
 									no += 1
-									ret_ += "\n╠ {}. @!".format(str(no))
-								ret_ += "\n╚══[ Total {} Members]".format(str(len(dataMid)))
+									ret_ += "\n| • | {}. @!".format(str(no))
+								ret_ += "\n| • | < ᴛᴏᴛᴀʟ {} ᴍᴇɴᴛɪᴏɴ >".format(str(len(dataMid)))
 								client.sendMention(to, ret_, dataMid)
 						elif cmd == "lurking on":
 							tz = pytz.timezone("Asia/Makassar")
@@ -843,28 +848,28 @@ def clientBot(op):
 								client.sendMessage(to, "Silahkan kirim gambarnya")
 						elif cmd == "macro on":
 							if settings["mimic"]["status"] == True:
-								client.sendMessage(to, "Reply message telah aktif")
+								client.sendMessage(to, "ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ ɪs ᴇɴᴀʙʟᴇ")
 							else:
 								settings["mimic"]["status"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan reply message")
+								client.sendMessage(to, "sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇ ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ")
 						elif cmd == "macro off":
 							if settings["mimic"]["status"] == False:
-								client.sendMessage(to, "Reply message telah nonaktif")
+								client.sendMessage(to, "ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ ɪs ᴅɪsᴀʙʟᴇ")
 							else:
 								settings["mimic"]["status"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan reply message")
+								client.sendMessage(to, "sᴜᴄᴄᴇssғᴜʟʟʏ ᴅɪsᴀʙʟᴇ ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ")
 						elif cmd == "macrolist":
 							if settings["mimic"]["target"] == {}:
-								client.sendMessage(to, "Tidak Ada Target")
+								client.sendMessage(to, "ᴛᴀʀɢᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ")
 							else:
 								no = 0
-								result = "╔══[ Mimic List ]"
+								ret_ = "| • | < ᴍᴀᴄʀᴏ ʟɪsᴛ >"
 								target = []
 								for mid in settings["mimic"]["target"]:
 									target.append(mid)
 									no += 1
-									result += "\n╠ {}. @!".format(no)
-								result += "\n╚══[ Total {} Mimic ]".format(str(len(target)))
+									result += "\n| • | {}. @!".format(no)
+								result += "\n| • | < ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ >".format(str(len(target)))
 								client.sendMention(to, result, target)
 						elif cmd.startswith("mimicadd "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
