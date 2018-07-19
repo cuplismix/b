@@ -226,10 +226,12 @@ def clientBot(op):
 					if msg.contentType == 0:
 						if cmd == "logout":
 							client.sendMessage(to, "sʜᴜᴛᴛɪɴɢ ᴅᴏᴡɴ . . .")
+							client.sendMessage(to, "ᴜsᴇʀ ʟᴏɢᴏғғ")
 							sys.exit("[ INFO ] BOT SHUTDOWN")
 							return
 						elif cmd == "restartbot":
 							client.sendMessage(to, "ʀᴇsᴛᴀʀᴛɪɴɢ . . .")
+							client.sendMessage(to, "ʀᴇsᴛᴀʀᴛ sᴜᴄᴄᴇssғᴜʟ (ᴛʏᴘᴇ=ᴀ)")
 							restartBot()
 						elif cmd == "speedbot":
 							start = time.time()
@@ -269,30 +271,21 @@ def clientBot(op):
 						elif cmd == "status":
 							try:
 								ret_ = "| • | < sᴛᴀᴛᴜs ʙᴏᴛ >"
-								if settings["autoAdd"] == True: ret_ += "\n╠ Auto Add : ON"
-								else: ret_ += "\n╠ Auto Add : OFF"
-								if settings["autoJoin"] == True: ret_ += "\n╠ Auto Join : ON"
-								else: ret_ += "\n╠ Auto Join : OFF"
-								if settings["autoJoin"] == True: ret_ += "\n╠ Auto Join Ticket : ON"
-								else: ret_ += "\n╠ Auto Join Ticket : OFF"
-								if settings["autoRead"] == True: ret_ += "\n╠ Auto Read : ON"
-								else: ret_ += "\n╠ Auto Read : OFF"
-								if settings["autoRespon"] == True: ret_ += "\n╠ Auto Respon : ON"
-								else: ret_ += "\n╠ Auto Respon : OFF"
-								if settings["checkContact"] == True: ret_ += "\n╠ Check Contact : ON"
-								else: ret_ += "\n╠ Check Contact : OFF"
-								if settings["checkPost"] == True: ret_ += "\n╠ Check Post : ON"
-								else: ret_ += "\n╠ Check Post : OFF"
-								if settings["checkSticker"] == True: ret_ += "\n╠ Check Sticker : ON"
-								else: ret_ += "\n╠ Check Sticker : OFF"
-								if settings["detectUnsend"] == True: ret_ += "\n╠ Detect Unsend : ON"
-								else: ret_ += "\n╠ Detect Unsend : OFF"
-								if settings["setKey"] == True: ret_ += "\n╠ Set Key : ON"
-								else: ret_ += "\n╠ Set Key : OFF"
-								ret_ +="\n╠ Auto Add Message : {}".format(settings["autoAddMessage"])
-								ret_ +="\n╠ Auto Join Message : {}".format(settings["autoJoinMessage"])
-								ret_ +="\n╠ Auto Respon Message : {}".format(settings["autoResponMessage"])
-								ret_ += "\n╚══[ Status ]"
+								if settings["mimic"]["status"] == True: ret_ += "\n| • | ᴍᴀᴄʀᴏ : ᴏɴ"
+								else: ret_ += "\n| • | ᴍᴀᴄʀᴏ : ᴏғғ"
+								if settings["mimic"]["target"] == {}: ret_ += "\n| • | ᴍᴀᴄʀᴏʟɪsᴛ : ᴛᴀʀɢᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ"
+								else: 
+									no = 0
+									ret_ = "| • | < ᴍᴀᴄʀᴏ ʟɪsᴛ >"
+									target = []
+									for mid in settings["mimic"]["target"]:
+										target.append(mid)
+										no += 1
+										ret_ += "\n╠ {}. @!".format(no)
+									ret_ += "\n| • | < ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ >".format(str(len(target)))
+								if settings["detectUnsend"] == True: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏɴ"
+								else: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏғғ"
+								ret_ += "\n| • | < ᴜɴᴋɴᴏᴡɴ ᴄᴏᴅᴇ >"
 								client.sendMessage(to, str(ret_))
 							except Exception as error:
 								logError(error)
@@ -848,19 +841,19 @@ def clientBot(op):
 								if to not in settings["changeGroupPicture"]:
 									settings["changeGroupPicture"].append(to)
 								client.sendMessage(to, "Silahkan kirim gambarnya")
-						elif cmd == "mimic on":
+						elif cmd == "macro on":
 							if settings["mimic"]["status"] == True:
 								client.sendMessage(to, "Reply message telah aktif")
 							else:
 								settings["mimic"]["status"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan reply message")
-						elif cmd == "mimic off":
+						elif cmd == "macro off":
 							if settings["mimic"]["status"] == False:
 								client.sendMessage(to, "Reply message telah nonaktif")
 							else:
 								settings["mimic"]["status"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan reply message")
-						elif cmd == "mimiclist":
+						elif cmd == "macrolist":
 							if settings["mimic"]["target"] == {}:
 								client.sendMessage(to, "Tidak Ada Target")
 							else:
