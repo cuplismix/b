@@ -129,7 +129,6 @@ def menuHelp():
 				"| • | " + key + "ʟᴏɢᴏᴜᴛ" + "\n" + \
 				"| • | " + key + "ʀᴇsᴛᴀʀᴛʙᴏᴛ" + "\n" + \
 				"| • | " + key + "sᴘᴇᴇᴅʙᴏᴛ" + "\n" + \
-				"| • | " + key + "sᴛᴀᴛᴜsʙᴏᴛ" + "\n" + \
 				"| • | " + key + "ᴜɴsᴇɴᴅᴄʜᴀᴛ [ ᴏɴ/ᴏғғ ]" + "\n" + \
 				"| • | " + key + "ᴍᴇ" + "\n" + \
 				"| • | " + key + "ᴍʏᴍɪᴅ" + "\n" + \
@@ -261,26 +260,7 @@ def clientBot(op):
 							link = "https://line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, helpTextToSpeech, icon, name, link)
 
-						elif cmd == "statusbot":
-							try:
-								icon = "https://cdn.icon-icons.com/icons2/909/PNG/512/code_icon-icons.com_70999.png"
-								name = "dwiwiranatha ηF"
-								link = "https://line.me/ti/p/CmNvfCneIG"
-								ret_ = "| • | < sᴛᴀᴛᴜs ʙᴏᴛ >"
-								if settings["detectUnsend"] == True: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏɴ"
-								else: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏғғ"
-								if settings["mimic"]["status"] == True: ret_ += "\n| • | ᴍᴀᴄʀᴏ : ᴏɴ"
-								else: ret_ += "\n| • | ᴍᴀᴄʀᴏ : ᴏғғ"
-								if settings["mimic"]["target"] == {}: ret_ += "\n| • | ᴍᴀᴄʀᴏʟɪsᴛ : ᴛᴀʀɢᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ"
-								else: 
-									ret_ = "| • | < ᴍᴀᴄʀᴏ ʟɪsᴛ >"
-									target = []
-									for mid in settings["mimic"]["target"]:
-										target.append(mid)
-										no += 1
-										ret_ += "\n| • | {}. @!".format(no)
-									ret_ += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ".format(str(len(target)))
-									client.sendFooter(to, str(ret_), icon, name, link)
+						
 						elif cmd == "unsendchat on":
 							if settings["detectUnsend"] == True:
 								client.sendMessage(to, "ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ ɪs ᴇɴᴀʙʟᴇ")
