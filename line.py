@@ -143,6 +143,7 @@ def menuHelp():
 				"| • | " + key + "sᴛᴀʟᴋᴠɪᴅᴇᴏᴘʀᴏғɪʟᴇ [ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
 				"| • | " + key + "sᴛᴀʟᴋᴄᴏᴠᴇʀ [ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
 				"| • | " + key + "ғʀɪᴇɴᴅʟɪsᴛ" + "\n" + \
+				"| • | " + key + "ʙʟᴏᴄᴋʟɪsᴛ" + "\n" + \
 				"| • | " + key + "ᴍᴇᴍʙᴇʀʟɪsᴛ" + "\n" + \
 				"| • | " + key + "ɢʀᴏᴜᴘɪɴғᴏ" + "\n" + \
 				"| • | " + key + "ᴍᴀᴄʀᴏ [ ᴏɴ/ᴏғғ ]" + "\n" + \
@@ -245,14 +246,6 @@ def clientBot(op):
 							name = "dwiwiranatha ηF"
 							link = "https://line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, aboutCreator, icon, name, link)
-						elif cmd.startswith("setkey: "):
-							sep = text.split(" ")
-							key = text.replace(sep[0] + " ","")
-							if " " in key:
-								client.sendMessage(to, "Key tidak bisa menggunakan spasi")
-							else:
-								settings["keyCommand"] = str(key).lower()
-								client.sendMessage(to, "Berhasil mengubah set key command menjadi : 「{}」".format(str(key).lower()))
 						elif cmd == "help":
 							helpMessage = menuHelp()
 							contact = client.getContact(sender)
@@ -287,177 +280,25 @@ def clientBot(op):
 										target.append(mid)
 										no += 1
 										ret_ += "\n| • | {}. @!".format(no)
-									ret_ += "\n| • | < ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ >".format(str(len(target)))
-								if settings["detectUnsend"] == True: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏɴ"
-								else: ret_ += "\n| • | ᴜɴsᴇɴᴅᴄʜᴀᴛ : ᴏғғ"
+									ret_ += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ".format(str(len(target)))
 								client.sendFooter(to, ret_, icon, name, link)
 							except Exception as error:
 								logError(error)
-						elif cmd == "autoadd on":
-							if settings["autoAdd"] == True:
-								client.sendMessage(to, "Auto add telah aktif")
-							else:
-								settings["autoAdd"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto add")
-						elif cmd == "autoadd off":
-							if settings["autoAdd"] == False:
-								client.sendMessage(to, "Auto add telah nonaktif")
-							else:
-								settings["autoAdd"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto add")
-						elif cmd == "autojoin on":
-							if settings["autoJoin"] == True:
-								client.sendMessage(to, "Auto join telah aktif")
-							else:
-								settings["autoJoin"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto join")
-						elif cmd == "autojoin off":
-							if settings["autoJoin"] == False:
-								client.sendMessage(to, "Auto join telah nonaktif")
-							else:
-								settings["autoJoin"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto join")
-						elif cmd == "autojointicket on":
-							if settings["autoJoinTicket"] == True:
-								client.sendMessage(to, "Auto join ticket telah aktif")
-							else:
-								settings["autoJoinTicket"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto join ticket")
-						elif cmd == "autojointicket off":
-							if settings["autoJoinTicket"] == False:
-								client.sendMessage(to, "Auto join ticket telah nonaktif")
-							else:
-								settings["autoJoinTicket"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto join ticket")
-						elif cmd == "autoread on":
-							if settings["autoRead"] == True:
-								client.sendMessage(to, "Auto read telah aktif")
-							else:
-								settings["autoRead"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto read")
-						elif cmd == "autoread off":
-							if settings["autoRead"] == False:
-								client.sendMessage(to, "Auto read telah nonaktif")
-							else:
-								settings["autoRead"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto read")
-						elif cmd == "autorespon on":
-							if settings["autoRespon"] == True:
-								client.sendMessage(to, "Auto respon telah aktif")
-							else:
-								settings["autoRespon"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto respon")
-						elif cmd == "autorespon off":
-							if settings["autoRespon"] == False:
-								client.sendMessage(to, "Auto respon telah nonaktif")
-							else:
-								settings["autoRespon"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto respon")
-						elif cmd == "checkcontact on":
-							if settings["checkContact"] == True:
-								client.sendMessage(to, "Check details contact telah aktif")
-							else:
-								settings["checkContact"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan check details contact")
-						elif cmd == "checkcontact off":
-							if settings["checkContact"] == False:
-								client.sendMessage(to, "Check details contact telah nonaktif")
-							else:
-								settings["checkContact"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan Check details contact")
-						elif cmd == "checkpost on":
-							if settings["checkPost"] == True:
-								client.sendMessage(to, "Check details post telah aktif")
-							else:
-								settings["checkPost"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan check details post")
-						elif cmd == "checkpost off":
-							if settings["checkPost"] == False:
-								client.sendMessage(to, "Check details post telah nonaktif")
-							else:
-								settings["checkPost"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan check details post")
-						elif cmd == "checksticker on":
-							if settings["checkSticker"] == True:
-								client.sendMessage(to, "Check details sticker telah aktif")
-							else:
-								settings["checkSticker"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan check details sticker")
-						elif cmd == "checksticker off":
-							if settings["checkSticker"] == False:
-								client.sendMessage(to, "Check details sticker telah nonaktif")
-							else:
-								settings["checkSticker"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan check details sticker")
-						elif cmd == "detectunsend on":
+						elif cmd == "unsendchat on":
 							if settings["detectUnsend"] == True:
-								client.sendMessage(to, "Detect unsend telah aktif")
+								client.sendMessage(to, "ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ ɪs ᴇɴᴀʙʟᴇ")
 							else:
 								settings["detectUnsend"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan detect unsend")
-						elif cmd == "detectunsend off":
+								client.sendMessage(to, "sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇ ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ")
+						elif cmd == "unsendchat off":
 							if settings["detectUnsend"] == False:
-								client.sendMessage(to, "Detect unsend telah nonaktif")
+								client.sendMessage(to, "ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ ɪs ᴅɪsᴀʙʟᴇ")
 							else:
 								settings["detectUnsend"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan detect unsend")
-						elif cmd.startswith("setautoaddmessage: "):
-							sep = text.split(" ")
-							txt = text.replace(sep[0] + " ","")
-							try:
-								settings["autoAddMessage"] = txt
-								client.sendMessage(to, "Berhasil mengubah pesan auto add menjadi : 「{}」".format(txt))
-							except:
-								client.sendMessage(to, "Gagal mengubah pesan auto add")
-						elif cmd.startswith("setautoresponmessage: "):
-							sep = text.split(" ")
-							txt = text.replace(sep[0] + " ","")
-							try:
-								settings["autoResponMessage"] = txt
-								client.sendMessage(to, "Berhasil mengubah pesan auto respon menjadi : 「{}」".format(txt))
-							except:
-								client.sendMessage(to, "Gagal mengubah pesan auto respon")
-						elif cmd.startswith("setautojoinmessage: "):
-							sep = text.split(" ")
-							txt = text.replace(sep[0] + " ","")
-							try:
-								settings["autoJoinMessage"] = txt
-								client.sendMessage(to, "Berhasil mengubah pesan auto join menjadi : 「{}」".format(txt))
-							except:
-								client.sendMessage(to, "Gagal mengubah pesan auto join")
-
-
-						elif cmd.startswith("changename: "):
-							sep = text.split(" ")
-							name = text.replace(sep[0] + " ","")
-							if len(name) <= 20:
-								profile = client.getProfile()
-								profile.displayName = name
-								client.updateProfile(profile)
-								client.sendMessage(to, "Berhasil mengubah nama menjadi : {}".format(name))
-						elif cmd.startswith("changebio: "):
-							sep = text.split(" ")
-							bio = text.replace(sep[0] + " ","")
-							if len(bio) <= 500:
-								profile = client.getProfile()
-								profile.displayName = bio
-								client.updateProfile(profile)
-								client.sendMessage(to, "Berhasil mengubah bio menjadi : {}".format(bio))
+								client.sendMessage(to, "sᴜᴄᴄᴇssғᴜʟʟʏ ᴅɪsᴀʙʟᴇ ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ")
 						elif cmd == "me":
 							client.sendMention(to, "@!", [sender])
 							client.sendContact(to, sender)
-						elif cmd == "myprofile":
-							contact = client.getContact(sender)
-							cover = client.getProfileCoverURL(sender)
-							result = "╔══[ Details Profile ]"
-							result += "\n╠ Display Name : @!"
-							result += "\n╠ Mid : {}".format(contact.mid)
-							result += "\n╠ Status Message : {}".format(contact.statusMessage)
-							result += "\n╠ Picture Profile : http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-							result += "\n╠ Cover : {}".format(str(cover))
-							result += "\n╚══[ Finish ]"
-							client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus))
-							client.sendMention(to, result, [sender])
 						elif cmd == "mymid":
 							contact = client.getContact(sender)
 							client.sendMention(to, "@!: {}".format(contact.mid), [sender])
@@ -473,12 +314,12 @@ def clientBot(op):
 						elif cmd == "myvideoprofile":
 							contact = client.getContact(sender)
 							if contact.videoProfile == None:
-								return client.sendMessage(to, "Anda tidak memiliki video profile")
+								return client.sendMessage(to, "ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴀ ᴠɪᴅᴇᴏ ᴘʀᴏғɪʟᴇ")
 							client.sendVideoWithURL(to, "http://dl.profile.line-cdn.net/{}/vp".format(contact.pictureStatus))
 						elif cmd == "mycover":
 							cover = client.getProfileCoverURL(sender)
 							client.sendImageWithURL(to, str(cover))
-						elif cmd.startswith("getmid "):
+						elif cmd.startswith("mid "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -489,19 +330,7 @@ def clientBot(op):
 										lists.append(mention["M"])
 								for ls in lists:
 									client.sendMention(to, "@!: {}".format(ls), [ls])
-						elif cmd.startswith("getname "):
-							if 'MENTION' in msg.contentMetadata.keys()!= None:
-								names = re.findall(r'@(\w+)', text)
-								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-								mentionees = mention['MENTIONEES']
-								lists = []
-								for mention in mentionees:
-									if mention["M"] not in lists:
-										lists.append(mention["M"])
-								for ls in lists:
-									contact = client.getContact(ls)
-									client.sendMention(to, "@!: {}".format(contact.displayName), [ls])
-						elif cmd.startswith("getbio "):
+						elif cmd.startswith("stalkbio "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -513,7 +342,7 @@ def clientBot(op):
 								for ls in lists:
 									contact = client.getContact(ls)
 									client.sendMention(to, "@!: {}".format(contact.statusMessage), [ls])
-						elif cmd.startswith("getpicture "):
+						elif cmd.startswith("stalkpicture "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -525,7 +354,7 @@ def clientBot(op):
 								for ls in lists:
 									contact = client.getContact(ls)
 									client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus))
-						elif cmd.startswith("getvideoprofile "):
+						elif cmd.startswith("stalkvideoprofile "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -537,9 +366,9 @@ def clientBot(op):
 								for ls in lists:
 									contact = client.getContact(ls)
 									if contact.videoProfile == None:
-										return client.sendMention(to, "@!tidak memiliki video profile", [ls])
+										return client.sendMention(to, "@!ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴀ ᴠɪᴅᴇᴏ ᴘʀᴏғɪʟᴇ", [ls])
 									client.sendVideoWithURL(to, "http://dl.profile.line-cdn.net/{}/vp".format(contact.pictureStatus))
-						elif cmd.startswith("getcover "):
+						elif cmd.startswith("stalkcover "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -551,211 +380,82 @@ def clientBot(op):
 								for ls in lists:
 									cover = client.getProfileCoverURL(ls)
 									client.sendImageWithURL(to, str(cover))
-						elif cmd.startswith("cloneprofile "):
-							if 'MENTION' in msg.contentMetadata.keys()!= None:
-								names = re.findall(r'@(\w+)', text)
-								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-								mentionees = mention['MENTIONEES']
-								lists = []
-								for mention in mentionees:
-									if mention["M"] not in lists:
-										lists.append(mention["M"])
-								for ls in lists:
-									client.cloneContactProfile(ls)
-									client.sendContact(to, sender)
-									client.sendMessage(to, "Berhasil clone profile")
-						elif cmd == "restoreprofile":
-							try:
-								clientProfile = client.getProfile()
-								clientProfile.displayName = str(settings["myProfile"]["displayName"])
-								clientProfile.statusMessage = str(settings["myProfile"]["statusMessage"])
-								clientPictureStatus = client.downloadFileURL("http://dl.profile.line-cdn.net/{}".format(str(settings["myProfile"]["pictureStatus"])), saveAs="LineAPI/tmp/backupPicture.bin")
-								coverId = str(settings["myProfile"]["coverId"])
-								client.updateProfile(clientProfile)
-								client.updateProfileCoverById(coverId)
-								client.updateProfilePicture(clientPictureStatus)
-								client.sendMessage(to, "Berhasil restore profile")
-								client.sendContact(to, sender)
-								client.deleteFile(clientPictureStatus)
-							except Exception as error:
-								logError(error)
-								client.sendMessage(to, "Gagal restore profile")
-						elif cmd == "backupprofile":
-							try:
-								clientProfile = client.getProfile()
-								settings["myProfile"]["displayName"] = str(clientProfile.displayName)
-								settings["myProfile"]["statusMessage"] = str(clientProfile.statusMessage)
-								settings["myProfile"]["pictureStatus"] = str(clientProfile.pictureStatus)
-								coverId = client.getProfileDetail()["result"]["objectId"]
-								settings["myProfile"]["coverId"] = str(coverId)
-								client.sendMessage(to, "Berhasil backup profile")
-							except Exception as error:
-								logError(error)
-								client.sendMessage(to, "Gagal backup profile")
 						elif cmd == "friendlist":
 							contacts = client.getAllContactIds()
 							num = 0
-							result = "╔══[ Friend List ]"
+							result = "| • | < ғʀɪᴇɴᴅ ʟɪsᴛ >"
 							for listContact in contacts:
 								contact = client.getContact(listContact)
 								num += 1
-								result += "\n╠ {}. {}".format(num, contact.displayName)
-							result += "\n╚══[ Total {} Friend ]".format(len(contacts))
+								result += "\n| • | {}. {}".format(num, contact.displayName)
+							result += "\n| • | ᴛᴏᴛᴀʟ {} ғʀɪᴇɴᴅ".format(len(contacts))
 							client.sendMessage(to, result)
-						elif cmd.startswith("friendinfo "):
-							sep = text.split(" ")
-							query = text.replace(sep[0] + " ","")
-							contacts = client.getAllContactIds()
-							try:
-								listContact = contacts[int(query)-1]
-								contact = client.getContact(listContact)
-								cover = client.getProfileCoverURL(listContact)
-								result = "╔══[ Details Profile ]"
-								result += "\n╠ Display Name : @!"
-								result += "\n╠ Mid : {}".format(contact.mid)
-								result += "\n╠ Status Message : {}".format(contact.statusMessage)
-								result += "\n╠ Picture Profile : http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-								result += "\n╠ Cover : {}".format(str(cover))
-								result += "\n╚══[ Finish ]"
-								client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus))
-								client.sendMention(to, result, [contact.mid])
-							except Exception as error:
-								logError(error)
 						elif cmd == "blocklist":
 							blockeds = client.getBlockedContactIds()
 							num = 0
-							result = "╔══[ List Blocked ]"
+							result = "| • | < ʙʟᴏᴄᴋᴇᴅ ʟɪsᴛ >"
 							for listBlocked in blockeds:
 								contact = client.getContact(listBlocked)
 								num += 1
-								result += "\n╠ {}. {}".format(num, contact.displayName)
-							result += "\n╚══[ Total {} Blocked ]".format(len(blockeds))
+								result += "\n| • | {}. {}".format(num, contact.displayName)
+							result += "\n| • | ᴛᴏᴛᴀʟ {} ʙʟᴏᴄᴋᴇᴅ ]".format(len(blockeds))
 							client.sendMessage(to, result)
-						elif cmd.startswith("friendbroadcast: "):
-							sep = text.split(" ")
-							txt = text.replace(sep[0] + " ","")
-							contacts = client.getAllContactIds()
-							for contact in contacts:
-								client.sendMessage(contact, "[ Broadcast ]\n{}".format(str(txt)))
-							client.sendMessage(to, "Berhasil broadcast ke {} teman".format(str(len(contacts))))
 
-
-						elif cmd.startswith("changegroupname: "):
-							if msg.toType == 2:
-								sep = text.split(" ")
-								groupname = text.replace(sep[0] + " ","")
-								if len(groupname) <= 20:
-									group = client.getGroup(to)
-									group.name = groupname
-									client.updateGroup(group)
-									client.sendMessage(to, "Berhasil mengubah nama group menjadi : {}".format(groupname))
 						elif cmd == "openqr":
 							if msg.toType == 2:
 								group = client.getGroup(to)
 								group.preventedJoinByTicket = False
 								client.updateGroup(group)
 								groupUrl = client.reissueGroupTicket(to)
-								client.sendMessage(to, "Berhasil membuka QR Group\n\nGroupURL : line://ti/g/{}".format(groupUrl))
+								client.sendMessage(to, "ǫʀ ɢʀᴏᴜᴘ\n\nᴜʀʟ : line://ti/g/{}".format(groupUrl))
 						elif cmd == "closeqr":
 							if msg.toType == 2:
 								group = client.getGroup(to)
 								group.preventedJoinByTicket = True
 								client.updateGroup(group)
-								client.sendMessage(to, "Berhasil menutup QR Group")
-						elif cmd == "grouppicture":
-							if msg.toType == 2:
-								group = client.getGroup(to)
-								groupPicture = "http://dl.profile.line-cdn.net/{}".format(group.pictureStatus)
-								client.sendImageWithURL(to, groupPicture)
-						elif cmd == "groupname":
-							if msg.toType == 2:
-								group = client.getGroup(to)
-								client.sendMessage(to, "Nama Group : {}".format(group.name))
-						elif cmd == "groupid":
-							if msg.toType == 2:
-								group = client.getGroup(to)
-								client.sendMessage(to, "Group ID : {}".format(group.id))
-						elif cmd == "grouplist":
-							groups = client.getGroupIdsJoined()
-							ret_ = "╔══[ Group List ]"
-							no = 0
-							for gid in groups:
-								group = client.getGroup(gid)
-								no += 1
-								ret_ += "\n╠ {}. {} | {}".format(str(no), str(group.name), str(len(group.members)))
-							ret_ += "\n╚══[ Total {} Groups ]".format(str(len(groups)))
-							client.sendMessage(to, str(ret_))
+								client.sendMessage(to, "ǫʀ ɢʀᴏᴜᴘ ᴄʟᴏsᴇᴅ")
 						elif cmd == "memberlist":
 							if msg.toType == 2:
 								group = client.getGroup(to)
 								num = 0
-								ret_ = "╔══[ List Member ]"
+								ret_ = "| • | < ᴍᴇᴍʙᴇʀ ʟɪsᴛ >"
 								for contact in group.members:
 									num += 1
-									ret_ += "\n╠ {}. {}".format(num, contact.displayName)
-								ret_ += "\n╚══[ Total {} Members]".format(len(group.members))
+									ret_ += "\n| • | {}. {}".format(num, contact.displayName)
+								ret_ += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴇᴍʙᴇʀ".format(len(group.members))
 								client.sendMessage(to, ret_)
-						elif cmd == "pendinglist":
-							if msg.toType == 2:
-								group = client.getGroup(to)
-								ret_ = "╔══[ Pending List ]"
-								no = 0
-								if group.invitee is None or group.invitee == []:
-									return client.sendMessage(to, "Tidak ada pendingan")
-								else:
-									for pending in group.invitee:
-										no += 1
-										ret_ += "\n╠ {}. {}".format(str(no), str(pending.displayName))
-									ret_ += "\n╚══[ Total {} Pending]".format(str(len(group.invitee)))
-									client.sendMessage(to, str(ret_))
 						elif cmd == "groupinfo":
 							group = client.getGroup(to)
 							try:
 								try:
 									groupCreator = group.creator.mid
 								except:
-									groupCreator = "Tidak ditemukan"
+									groupCreator = "ɴᴏᴛ ғᴏᴜɴᴅ"
 								if group.invitee is None:
 									groupPending = "0"
 								else:
 									groupPending = str(len(group.invitee))
 								if group.preventedJoinByTicket == True:
-									groupQr = "Tertutup"
-									groupTicket = "Tidak ada"
+									groupQr = "ᴄʟᴏsᴇᴅ"
 								else:
-									groupQr = "Terbuka"
-									groupTicket = "https://line.me/R/ti/g/{}".format(str(client.reissueGroupTicket(group.id)))
-								ret_ = "╔══[ Group Information ]"
-								ret_ += "\n╠ Nama Group : {}".format(group.name)
-								ret_ += "\n╠ ID Group : {}".format(group.id)
-								ret_ += "\n╠ Pembuat : @!"
-								ret_ += "\n╠ Jumlah Member : {}".format(str(len(group.members)))
-								ret_ += "\n╠ Jumlah Pending : {}".format(groupPending)
-								ret_ += "\n╠ Group Qr : {}".format(groupQr)
-								ret_ += "\n╠ Group Ticket : {}".format(groupTicket)
-								ret_ += "\n╚══[ Success ]"
+									groupQr = "ᴏᴘᴇɴ"
+								ret_ = "| • | < ɢʀᴏᴜᴘ ɪɴғᴏʀᴍᴀᴛɪᴏɴ >"
+								ret_ += "\n| • | ɢʀᴏᴜᴘ ɴᴀᴍᴇ : {}".format(group.name)
+								ret_ += "\n| • | ɢʀᴏᴜᴘ ᴄʀᴇᴀᴛᴏʀ : @!"
+								ret_ += "\n| • | ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀ : {}".format(str(len(group.members)))
+								ret_ += "\n| • | ᴛᴏᴛᴀʟ ᴘᴇɴᴅɪɴɢ : {}".format(groupPending)
+								ret_ += "\n| • | ǫʀ ɢʀᴏᴜᴘ : {}".format(groupQr)
 								client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(group.pictureStatus))
 								client.sendMention(to, str(ret_), [groupCreator])
 							except:
-								ret_ = "╔══[ Group Information ]"
-								ret_ += "\n╠ Nama Group : {}".format(group.name)
-								ret_ += "\n╠ ID Group : {}".format(group.id)
-								ret_ += "\n╠ Pembuat : {}".format(groupCreator)
-								ret_ += "\n╠ Jumlah Member : {}".format(str(len(group.members)))
-								ret_ += "\n╠ Jumlah Pending : {}".format(groupPending)
-								ret_ += "\n╠ Group Qr : {}".format(groupQr)
-								ret_ += "\n╠ Group Ticket : {}".format(groupTicket)
-								ret_ += "\n╚══[ Success ]"
+								ret_ = "| • | < ɢʀᴏᴜᴘ ɪɴғᴏʀᴍᴀᴛɪᴏɴ >"
+								ret_ += "\n| • | ɢʀᴏᴜᴘ ɴᴀᴍᴇ : {}".format(group.name)
+								ret_ += "\n| • | ɢʀᴏᴜᴘ ᴄʀᴇᴀᴛᴏʀ : {}".format(groupCreator)
+								ret_ += "\n| • | ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀ : {}".format(str(len(group.members)))
+								ret_ += "\n| • | ᴛᴏᴛᴀʟ ᴘᴇɴᴅɪɴɢ : {}".format(groupPending)
+								ret_ += "\n| • | ǫʀ ɢʀᴏᴜᴘ : {}".format(groupQr)
 								client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(group.pictureStatus))
 								client.sendMessage(to, str(ret_))
-						elif cmd.startswith("groupbroadcast: "):
-							sep = text.split(" ")
-							txt = text.replace(sep[0] + " ","")
-							groups = client.getGroupIdsJoined()
-							for group in groups:
-								client.sendMessage(group, "[ Broadcast ]\n{}".format(str(txt)))
-							client.sendMessage(to, "Berhasil broadcast ke {} group".format(str(len(groups))))
-
 
 						elif cmd == 'mention':
 							group = client.getGroup(to)
@@ -769,9 +469,9 @@ def clientBot(op):
 									dataMid.append(dataMention.mid)
 									no += 1
 									ret_ += "\n| • | {}. @!".format(str(no))
-								ret_ += "\n| • | < ᴛᴏᴛᴀʟ {} ᴍᴇɴᴛɪᴏɴ >".format(str(len(dataMid)))
+								ret_ += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴇɴᴛɪᴏɴ".format(str(len(dataMid)))
 								client.sendMention(to, ret_, dataMid)
-						elif cmd == "lurking on":
+						elif cmd == "spybot on":
 							tz = pytz.timezone("Asia/Makassar")
 							timeNow = datetime.now(tz=tz)
 							day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
@@ -783,7 +483,7 @@ def clientBot(op):
 								if hr == day[i]: hasil = hari[i]
 							for k in range(0, len(bulan)):
 								if bln == str(k): bln = bulan[k-1]
-							readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
+							readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nᴛɪᴍᴇ : [ " + timeNow.strftime('%H:%M:%S') + " ]"
 							if to in read['readPoint']:
 								try:
 									del read['readPoint'][to]
@@ -792,7 +492,7 @@ def clientBot(op):
 									pass
 								read['readPoint'][to] = msg_id
 								read['readMember'][to] = []
-								client.sendMessage(to, "Lurking telah diaktifkan")
+								client.sendMessage(to, "sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇ sᴘʏʙᴏᴛ")
 							else:
 								try:
 									del read['readPoint'][to]
@@ -801,8 +501,8 @@ def clientBot(op):
 									pass
 								read['readPoint'][to] = msg_id
 								read['readMember'][to] = []
-								client.sendMessage(to, "Set reading point : \n{}".format(readTime))
-						elif cmd == "lurking off":
+								client.sendMessage(to, "sᴇᴛ ʀᴇᴀᴅɪɴɢ ᴘᴏɪɴᴛ : \n{}".format(readTime))
+						elif cmd == "spybot off":
 							tz = pytz.timezone("Asia/Makassar")
 							timeNow = datetime.now(tz=tz)
 							day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
@@ -814,37 +514,37 @@ def clientBot(op):
 								if hr == day[i]: hasil = hari[i]
 							for k in range(0, len(bulan)):
 								if bln == str(k): bln = bulan[k-1]
-							readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
+							readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nᴛɪᴍᴇ : [ " + timeNow.strftime('%H:%M:%S') + " ]"
 							if to not in read['readPoint']:
-								client.sendMessage(to,"Lurking telah dinonaktifkan")
+								client.sendMessage(to,"sᴜᴄᴄᴇssғᴜʟʟʏ ᴅɪsᴀʙʟᴇ sᴘʏʙᴏᴛ")
 							else:
 								try:
 									del read['readPoint'][to]
 									del read['readMember'][to]
 								except:
 									pass
-								client.sendMessage(to, "Delete reading point : \n{}".format(readTime))
-						elif cmd == "lurking":
+								client.sendMessage(to, "ᴅᴇʟᴇᴛᴇ ʀᴇᴀᴅɪɴɢ ᴘᴏɪɴᴛ : \n{}".format(readTime))
+						elif cmd == "scan":
 							if to in read['readPoint']:
 								if read["readMember"][to] == []:
-									return client.sendMessage(to, "Tidak Ada Sider")
+									return client.sendMessage(to, "sɪʟᴇɴᴛ ʀᴇᴀᴅᴇʀ ɴᴏᴛ ғᴏᴜɴᴅ")
 								else:
 									no = 0
-									result = "╔══[ Reader ]"
+									result = "| • | < ʀᴇᴀᴅᴇʀ >"
 									for dataRead in read["readMember"][to]:
 										no += 1
-										result += "\n╠ {}. @!".format(str(no))
-									result += "\n╚══[ Total {} Sider ]".format(str(len(read["readMember"][to])))
+										result += "\n| • | {}. @!".format(str(no))
+									result += "\n| • | ᴛᴏᴛᴀʟ {} ʀᴇᴀᴅᴇʀ".format(str(len(read["readMember"][to])))
 									client.sendMention(to, result, read["readMember"][to])
 									read['readMember'][to] = []
 						elif cmd == "changepictureprofile":
 							settings["changePictureProfile"] = True
-							client.sendMessage(to, "Silahkan kirim gambarnya")
+							client.sendMessage(to, "ᴘʟᴇᴀsᴇ sᴇɴᴅ ᴛʜᴇ ᴘɪᴄᴛᴜʀᴇ")
 						elif cmd == "changegrouppicture":
 							if msg.toType == 2:
 								if to not in settings["changeGroupPicture"]:
 									settings["changeGroupPicture"].append(to)
-								client.sendMessage(to, "Silahkan kirim gambarnya")
+								client.sendMessage(to, "ᴘʟᴇᴀsᴇ sᴇɴᴅ ᴛʜᴇ ᴘɪᴄᴛᴜʀᴇ")
 						elif cmd == "macro on":
 							if settings["mimic"]["status"] == True:
 								client.sendMessage(to, "ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ ɪs ᴇɴᴀʙʟᴇ")
@@ -868,9 +568,9 @@ def clientBot(op):
 									target.append(mid)
 									no += 1
 									result += "\n| • | {}. @!".format(no)
-								result += "\n| • | < ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ >".format(str(len(target)))
+								result += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ".format(str(len(target)))
 								client.sendMention(to, result, target)
-						elif cmd.startswith("mimicadd "):
+						elif cmd.startswith("macroadd "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -882,13 +582,13 @@ def clientBot(op):
 								for ls in lists:
 									try:
 										if ls in settings["mimic"]["target"]:
-											client.sendMessage(to, "Target sudah ada dalam list")
+											client.sendMessage(to, "ᴛʜᴇ ᴛᴀʀɢᴇᴛ ɪs ᴀʟʀᴇᴀᴅʏ ɪɴ ᴛʜᴇ ʟɪsᴛ")
 										else:
 											settings["mimic"]["target"][ls] = True
-											client.sendMessage(to, "Berhasil menambahkan target")
+											client.sendMessage(to, "ᴀᴅᴅᴇᴅ ᴛᴀʀɢᴇᴛ sᴜᴄᴄᴇssғᴜʟ")
 									except:
-										client.sendMessage(to, "Gagal menambahkan target")
-						elif cmd.startswith("mimicdel "):
+										client.sendMessage(to, "ᴀᴅᴅᴇᴅ ᴛᴀʀɢᴇᴛ ғᴀɪʟᴇᴅ")
+						elif cmd.startswith("macrodel "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -900,15 +600,15 @@ def clientBot(op):
 								for ls in lists:
 									try:
 										if ls not in settings["mimic"]["target"]:
-											client.sendMessage(to, "Target sudah tida didalam list")
+											client.sendMessage(to, "ᴛᴀʀɢᴇᴛ ɪs ᴏᴜᴛ ᴏғ ᴛʜᴇ ʟɪsᴛ")
 										else:
 											del settings["mimic"]["target"][ls]
-											client.sendMessage(to, "Berhasil menghapus target")
+											client.sendMessage(to, "ᴅᴇʟᴇᴛᴇ ᴛᴀʀɢᴇᴛ sᴜᴄᴄᴇssғᴜʟ")
 									except:
-										client.sendMessage(to, "Gagal menghapus target")
+										client.sendMessage(to, "ғᴀɪʟᴇᴅ ᴀᴅᴅᴇᴅ ᴛᴀʀɢᴇᴛ")
 
 
-						elif cmd.startswith("instainfo"):
+						elif cmd.startswith("/instainfo"):
 							sep = text.split(" ")
 							txt = text.replace(sep[0] + " ","")
 							url = requests.get("http://rahandiapi.herokuapp.com/instainfo/{}?key=betakey".format(txt))
@@ -927,7 +627,7 @@ def clientBot(op):
 							result += "\n╚══[ Finish ]"
 							client.sendImageWithURL(to, data["result"]["url"])
 							client.sendFooter(to, result, icon, name, link)
-						elif cmd.startswith("instastory "):
+						elif cmd.startswith("/instastory "):
 							sep = text.split(" ")
 							query = text.replace(sep[0] + " ","")
 							cond = query.split("|")
@@ -942,7 +642,7 @@ def clientBot(op):
 										client.sendImageWithURL(to, str(search["link"]))
 									elif search["tipe"] == 2:
 										client.sendVideoWithURL(to, str(search["link"]))
-						elif cmd == "quotes":
+						elif cmd == "/quotes":
 							url = requests.get("https://botfamily.faith/api/quotes/?apikey=beta")
 							data = url.json()
 							result = "╔══[ Quotes ]"
@@ -951,7 +651,7 @@ def clientBot(op):
 							result += "\n╠ Quote : {}".format(data["result"]["quote"])
 							result += "\n╚══[ Finish ]"
 							client.sendMessage(to, result)
-						elif cmd.startswith("say-"):
+						elif cmd.startswith("/say-"):
 							sep = text.split("-")
 							sep = sep[1].split(" ")
 							lang = sep[0]
@@ -960,12 +660,12 @@ def clientBot(op):
 							else:
 								txt = text.lower().replace(settings["keyCommand"] + "say-" + lang + " ","")
 							if lang not in language["gtts"]:
-								return client.sendMessage(to, "Bahasa {} tidak ditemukan".format(lang))
+								return client.sendMessage(to, "ʟᴀɴɢᴜᴀɢᴇ {} ɴᴏᴛ ғᴏᴜɴᴅ".format(lang))
 							tts = gTTS(text=txt, lang=lang)
 							tts.save("line/tmp/tts-{}.mp3".format(lang))
 							client.sendAudio(to, "line/tmp/tts-{}.mp3".format(lang))
 							client.deleteFile("line/tmp/tts-{}.mp3".format(lang))
-						elif cmd.startswith("searchyoutube "):
+						elif cmd.startswith("/searchyoutube "):
 							sep = text.split(" ")
 							txt = msg.text.replace(sep[0] + " ","")
 							cond = txt.split("|")
@@ -996,13 +696,13 @@ def clientBot(op):
 									ret_ += "\n╚══[ {} ]".format(str(search["webpage"]))
 									client.sendImageWithURL(to, str(search["thumbnail"]))
 									client.sendMessage(to, str(ret_))
-						elif cmd.startswith("searchimage "):
+						elif cmd.startswith("/searchimage "):
 							sep = text.split(" ")
 							txt = text.replace(sep[0] + " ","")
 							url = requests.get("http://rahandiapi.herokuapp.com/imageapi?key=betakey&q={}".format(txt))
 							data = url.json()
 							client.sendImageWithURL(to, random.choice(data["result"]))
-						elif cmd.startswith("searchmusic "):
+						elif cmd.startswith("/searchmusic "):
 							sep = text.split(" ")
 							query = text.replace(sep[0] + " ","")
 							cond = query.split("|")
@@ -1033,7 +733,7 @@ def clientBot(op):
 									client.sendImageWithURL(to, str(data["result"]["img"]))
 									client.sendMessage(to, str(ret_))
 									client.sendAudioWithURL(to, str(data["result"]["mp3"][0]))
-						elif cmd.startswith("searchlyric "):
+						elif cmd.startswith("/searchlyric "):
 							sep = text.split(" ")
 							txt = text.replace(sep[0] + " ","")
 							cond = txt.split("|")
@@ -1068,7 +768,7 @@ def clientBot(op):
 											for lyricContent in data.findAll("p", {"class":"mxm-lyrics__content "}):
 												lyric = lyricContent.text
 												client.sendMessage(to, lyric)
-						elif cmd.startswith("tr-"):
+						elif cmd.startswith("/tr-"):
 							sep = text.split("-")
 							sep = sep[1].split(" ")
 							lang = sep[0]
