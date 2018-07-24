@@ -273,7 +273,6 @@ def clientBot(op):
 								else: ret_ += "\n| • | ᴍᴀᴄʀᴏ : ᴏғғ"
 								if settings["mimic"]["target"] == {}: ret_ += "\n| • | ᴍᴀᴄʀᴏʟɪsᴛ : ᴛᴀʀɢᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ"
 								else: 
-									no = 0
 									ret_ = "| • | < ᴍᴀᴄʀᴏ ʟɪsᴛ >"
 									target = []
 									for mid in settings["mimic"]["target"]:
@@ -281,9 +280,9 @@ def clientBot(op):
 										no += 1
 										ret_ += "\n| • | {}. @!".format(no)
 									ret_ += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ".format(str(len(target)))
-								client.sendFooter(to, ret_, icon, name, link)
-							except Exception as error:
-								logError(error)
+									client.sendFooter(to, str(ret_), icon, name, link)
+								except Exception as error:
+									logError(error)
 						elif cmd == "unsendchat on":
 							if settings["detectUnsend"] == True:
 								client.sendMessage(to, "ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ ɪs ᴇɴᴀʙʟᴇ")
@@ -981,12 +980,10 @@ def clientBot(op):
 							try:
 								sendTime = unsendTime - unsend[sender]["time"]
 								sendTime = timeChange(sendTime)
-								ret_ = "╔══[ Unsend Message ]"
-								ret_ += "\n╠ Sender : @!"
-								ret_ += "\n╠ Time : {} yang lalu".format(sendTime)
-								ret_ += "\n╠ Type : Text"
-								ret_ += "\n╠ Text : {}".format(unsend[sender]["text"])
-								ret_ += "\n╚══[ Finish ]"
+								ret_ = "| • | < ᴜɴsᴇɴᴅ ᴍᴇssᴀɢᴇ >"
+								ret_ += "\n| • | sᴇɴᴅᴇʀ : @!"
+								ret_ += "\n| • | ᴛʏᴘᴇ : ᴛᴇxᴛ"
+								ret_ += "\n| • | ᴛᴇxᴛ : {}".format(unsend[sender]["text"])
 								client.sendMention(to, ret_, [contact.mid])
 								del unsend[sender]
 							except:
@@ -995,12 +992,10 @@ def clientBot(op):
 							try:
 								sendTime = unsendTime - unsend[sender]["time"]
 								sendTime = timeChange(sendTime)
-								ret_ = "╔══[ Unsend Message ]"
-								ret_ += "\n╠ Sender : @!"
-								ret_ += "\n╠ Time : {} yang lalu".format(sendTime)
-								ret_ += "\n╠ Type : Image"
-								ret_ += "\n╠ Text : None"
-								ret_ += "\n╚══[ Finish ]"
+								ret_ = "| • | < ᴜɴsᴇɴᴅ ᴍᴇssᴀɢᴇ >"
+								ret_ += "\n| • | sᴇɴᴅᴇʀ : @!"
+								ret_ += "\n| • | ᴛʏᴘᴇ : ɪᴍᴀɢᴇ"
+								ret_ += "\n| • | ᴛᴇxᴛ : ɴᴏɴᴇ"
 								client.sendMention(to, ret_, [contact.mid])
 								client.sendImage(to, unsend[sender]["image"])
 								client.deleteFile(unsend[sender]["image"])
@@ -1009,7 +1004,7 @@ def clientBot(op):
 								client.deleteFile(unsend[sender]["image"])
 								del unsend[sender]
 					else:
-						client.sendMessage(to, "Data unsend tidak ditemukan")
+						client.sendMessage(to, "404 Not Found")
 			except Exception as error:
 				logError(error)
 		backupData()
