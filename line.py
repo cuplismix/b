@@ -281,8 +281,6 @@ def clientBot(op):
 										ret_ += "\n| • | {}. @!".format(no)
 									ret_ += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ".format(str(len(target)))
 									client.sendFooter(to, str(ret_), icon, name, link)
-								except Exception as error:
-									logError(error)
 						elif cmd == "unsendchat on":
 							if settings["detectUnsend"] == True:
 								client.sendMessage(to, "ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ ɪs ᴇɴᴀʙʟᴇ")
