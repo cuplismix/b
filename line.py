@@ -451,9 +451,9 @@ def clientBot(op):
 						elif cmd == "spybot on":
 							tz = pytz.timezone("Asia/Makassar")
 							timeNow = datetime.now(tz=tz)
-							day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
-							hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
-							bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+							day = ["sᴜɴᴅᴀʏ", "ᴍᴏɴᴅᴀʏ", "ᴛᴜᴇsᴅᴀʏ", "ᴡᴇᴅɴᴇsᴅᴀʏ", "ᴛʜᴜʀsᴅᴀʏ","ғʀɪᴅᴀʏ", "sᴀᴛᴜʀᴅᴀʏ"]
+							hari = ["ᴍɪɴɢɢᴜ", "sᴇɴɪɴ", "sᴇʟᴀsᴀ", "ʀᴀʙᴜ", "ᴋᴀᴍɪs", "ᴊᴜᴍᴀᴛ", "sᴀʙᴛᴜ"]
+							bulan = ["ᴊᴀɴᴜᴀʀɪ", "ғᴇʙʀᴜᴀʀɪ", "ᴍᴀʀᴇᴛ", "ᴀᴘʀɪʟ", "ᴍᴇɪ", "ᴊᴜɴɪ", "ᴊᴜʟɪ", "ᴀɢᴜsᴛᴜs", "sᴇᴘᴛᴇᴍʙᴇʀ", "ᴏᴋᴛᴏʙᴇʀ", "ɴᴏᴠᴇᴍʙᴇʀ", "ᴅᴇsᴇᴍʙᴇʀ"]
 							hr = timeNow.strftime("%A")
 							bln = timeNow.strftime("%m")
 							for i in range(len(day)):
@@ -482,9 +482,9 @@ def clientBot(op):
 						elif cmd == "spybot off":
 							tz = pytz.timezone("Asia/Makassar")
 							timeNow = datetime.now(tz=tz)
-							day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
-							hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
-							bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+							day = ["sᴜɴᴅᴀʏ", "ᴍᴏɴᴅᴀʏ", "ᴛᴜᴇsᴅᴀʏ", "ᴡᴇᴅɴᴇsᴅᴀʏ", "ᴛʜᴜʀsᴅᴀʏ","ғʀɪᴅᴀʏ", "sᴀᴛᴜʀᴅᴀʏ"]
+							hari = ["ᴍɪɴɢɢᴜ", "sᴇɴɪɴ", "sᴇʟᴀsᴀ", "ʀᴀʙᴜ", "ᴋᴀᴍɪs", "ᴊᴜᴍᴀᴛ", "sᴀʙᴛᴜ"]
+							bulan = ["ᴊᴀɴᴜᴀʀɪ", "ғᴇʙʀᴜᴀʀɪ", "ᴍᴀʀᴇᴛ", "ᴀᴘʀɪʟ", "ᴍᴇɪ", "ᴊᴜɴɪ", "ᴊᴜʟɪ", "ᴀɢᴜsᴛᴜs", "sᴇᴘᴛᴇᴍʙᴇʀ", "ᴏᴋᴛᴏʙᴇʀ", "ɴᴏᴠᴇᴍʙᴇʀ", "ᴅᴇsᴇᴍʙᴇʀ"]
 							hr = timeNow.strftime("%A")
 							bln = timeNow.strftime("%m")
 							for i in range(len(day)):
