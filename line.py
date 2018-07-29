@@ -982,7 +982,7 @@ def clientBot(op):
 								client.deleteFile(unsend[sender]["image"])
 								del unsend[sender]
 					else:
-						client.sendMessage(to, "404 Not Found")
+						client.sendMessage(to, "sᴏʀʀʏ ʙᴏᴛ ᴄᴀɴ'ᴛ ᴅᴇᴛᴇᴄᴛ ᴛʜᴇ ᴍᴇssᴀɢᴇ")
 			except Exception as error:
 				logError(error)
 		backupData()
