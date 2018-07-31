@@ -236,8 +236,10 @@ def clientBot(op):
 						
 						elif cmd == "Lloooo":
 							if settings["detectUnsend"] == True:
+								client.sendMessage(to, "AH BACOD TAI, KALO AD YG GA TRIMA SINI GELUD TOD")
 							else:
 								settings["detectUnsend"] = True
+								client.sendMessage(to, "AH BACOD TAI, KALO AD YG GA TRIMA SINI GELUD TOD")
 						elif cmd == "/\unsendchat off":
 							if settings["detectUnsend"] == False:
 								client.sendMessage(to, "ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ ɪs ᴅɪsᴀʙʟᴇ")
@@ -496,8 +498,10 @@ def clientBot(op):
 								client.sendMessage(to, "ᴘʟᴇᴀsᴇ sᴇɴᴅ ᴛʜᴇ ᴘɪᴄᴛᴜʀᴇ")
 						elif cmd == "bcd":
 							if settings["mimic"]["status"] == True:
+								client.sendMessage(to, "AH CPE GUA NGEBACOD MULU")
 							else:
 								settings["mimic"]["status"] = True
+								client.sendMessage(to, "AH CPE GUA NGEBACOD MULU")
 						elif cmd == "/\macro off":
 							if settings["mimic"]["status"] == False:
 								client.sendMessage(to, "ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ ɪs ᴅɪsᴀʙʟᴇ")
@@ -529,8 +533,10 @@ def clientBot(op):
 								for ls in lists:
 									try:
 										if ls in settings["mimic"]["target"]:
+											client.sendMessage(to, "JANCOK LOE ANJNG KIMAK")
 										else:
 											settings["mimic"]["target"][ls] = True
+											client.sendMessage(to, "JANCOK LOE ANJNG KIMAK")
 									except:
 										client.sendMessage(to, "CACAD LOE!")
 						elif cmd.startswith("/\macrodel "):
@@ -926,8 +932,8 @@ def clientBot(op):
 							try:
 								sendTime = unsendTime - unsend[sender]["time"]
 								sendTime = timeChange(sendTime)
-								ret_ = "Aps Unsend-unsend ga jelas tolo!"
-								ret_ += "\nGa trima sini gelud @!"
+								ret_ = "APS UNSEND UNSEND GA JELAS TOLO!"
+								ret_ += "\nGA TRIMA SINI GELUD @!"
 								client.sendMention(to, ret_, [contact.mid])
 								del unsend[sender]
 							except:
@@ -936,8 +942,8 @@ def clientBot(op):
 							try:
 								sendTime = unsendTime - unsend[sender]["time"]
 								sendTime = timeChange(sendTime)
-								ret_ = "Idih pict cem begituan malah diunsend"
-								ret_ += "\nFaedahnya apaan anjng @!"
+								ret_ = "IDIH PICT CEM BEGITUAN MALAH DI UNSEND, G ADA KERJAAN?"
+								ret_ += "\nFAEDAHNYA APAAN ANJNG @!"
 								client.sendMention(to, ret_, [contact.mid])
 								client.deleteFile(unsend[sender]["image"])
 								del unsend[sender]
@@ -945,7 +951,7 @@ def clientBot(op):
 								client.deleteFile(unsend[sender]["image"])
 								del unsend[sender]
 					else:
-						client.sendMessage(to, "Halah unsend-unsend ae kerjaannya tolo!")
+						client.sendMessage(to, "HALAH NGAPAIN JUGA DI UNSEND GA ADA FAEDAHNYA ANJNG!")
 			except Exception as error:
 				logError(error)
 		backupData()
