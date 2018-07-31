@@ -122,37 +122,10 @@ def menuHelp():
 		key = settings['keyCommand']
 	else:
 		key = ''
-	menuHelp =	"| • | < ʜᴇʟᴘ ᴍᴇssᴀɢᴇ >" + "\n" + \
-				"| • | " + key + "ʜᴇʟᴘ" + "\n" + \
-				"| • | " + key + "sᴀʏʜᴇʟᴘ" + "\n" + \
-				"| • | " + key + "ᴄʀᴇᴀᴛᴏʀ" + "\n" + \
-				"| • | " + key + "ʟᴏɢᴏᴜᴛ" + "\n" + \
-				"| • | " + key + "ʀᴇsᴛᴀʀᴛʙᴏᴛ" + "\n" + \
-				"| • | " + key + "sᴘᴇᴇᴅʙᴏᴛ" + "\n" + \
-				"| • | " + key + "ᴜɴsᴇɴᴅᴄʜᴀᴛ [ ᴏɴ/ᴏғғ ]" + "\n" + \
-				"| • | " + key + "ᴍᴇ" + "\n" + \
-				"| • | " + key + "ᴍʏᴍɪᴅ" + "\n" + \
-				"| • | " + key + "ᴍʏɴᴀᴍᴇ" + "\n" + \
-				"| • | " + key + "ᴍʏʙɪᴏ" + "\n" + \
-				"| • | " + key + "ᴍʏᴘɪᴄᴛᴜʀᴇ" + "\n" + \
-				"| • | " + key + "ᴍʏᴠɪᴅᴇᴏᴘʀᴏғɪʟᴇ" + "\n" + \
-				"| • | " + key + "ᴍʏᴄᴏᴠᴇʀ" + "\n" + \
-				"| • | " + key + "sᴛᴀʟᴋʙɪᴏ [ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
-				"| • | " + key + "sᴛᴀʟᴋᴘɪᴄᴛᴜʀᴇ [ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
-				"| • | " + key + "sᴛᴀʟᴋᴠɪᴅᴇᴏᴘʀᴏғɪʟᴇ [ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
-				"| • | " + key + "sᴛᴀʟᴋᴄᴏᴠᴇʀ [ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
-				"| • | " + key + "ғʀɪᴇɴᴅʟɪsᴛ" + "\n" + \
-				"| • | " + key + "ʙʟᴏᴄᴋʟɪsᴛ" + "\n" + \
-				"| • | " + key + "ᴍᴇᴍʙᴇʀʟɪsᴛ" + "\n" + \
-				"| • | " + key + "ɢʀᴏᴜᴘɪɴғᴏ" + "\n" + \
-				"| • | " + key + "ᴍᴀᴄʀᴏ [ ᴏɴ/ᴏғғ ]" + "\n" + \
-				"| • | " + key + "ᴍᴀᴄʀᴏʟɪsᴛ" + "\n" + \
-				"| • | " + key + "ᴍᴀᴄʀᴏᴀᴅᴅ [ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
-				"| • | " + key + "ᴍᴀᴄʀᴏᴅᴇʟ[ ᴍᴇɴᴛɪᴏɴ ]" + "\n" + \
-				"| • | " + key + "ᴍᴇɴᴛɪᴏɴ" + "\n" + \
-				"| • | " + key + "sᴘʏʙᴏᴛ [ ᴏɴ/ᴏғғ/ʀᴇsᴇᴛ ]" + "\n" + \
-				"| • | " + key + "sᴄᴀɴ" + "\n" + \
-				"| • | < ᴜɴᴋɴᴏᴡɴ ᴄᴏᴅᴇ >"
+	menuHelp =	"</> UNKOWN CODE INDONESIA" + "\n" + \
+				"</> " + key + "DEWA RP" + "\n" + \
+				"</> " + key + "ORANG TOLO SE-INDONESIA" + "\n" + \
+				"loe yang bacot anjing belagu bangsat dari tadi kan loe yang chat kontol ih bego banget si loe"
 	return menuHelp
 
 def displayCreator():
@@ -224,16 +197,16 @@ def clientBot(op):
 					elif msg.toType == 2:
 						to = receiver
 					if msg.contentType == 0:
-						if cmd == "logout":
+						if cmd == "/\logout":
 							client.sendMessage(to, "sʜᴜᴛᴛɪɴɢ ᴅᴏᴡɴ . . .")
 							client.sendMessage(to, "ᴜsᴇʀ ʟᴏɢᴏғғ")
 							sys.exit("[ INFO ] BOT SHUTDOWN")
 							return
-						elif cmd == "restartbot":
+						elif cmd == "/\restartbot":
 							client.sendMessage(to, "ʀᴇsᴛᴀʀᴛɪɴɢ . . .")
-							client.sendMessage(to, "ʀᴇsᴛᴀʀᴛ sᴜᴄᴄᴇssғᴜʟ (ᴛʏᴘᴇ=ᴀ)")
-							restartBot()
-						elif cmd == "speedbot":
+						elif cmd == "Abcd":
+							client.sendMessage(to, "loe yang bacot anjing belagu bangsat dari tadi kan loe yang chat kontol ih bego banget si loe")
+						elif cmd == "/\speedbot":
 							start = time.time()
 							client.sendMessage(to, "ᴄᴏɴɴᴇᴄᴛɪɴɢ . . .")
 							elapsed_time = time.time() - start
@@ -245,14 +218,14 @@ def clientBot(op):
 							name = "dwiwiranatha ηF"
 							link = "https://line.me/ti/p/CmNvfCneIG"
 							client.sendFooter(to, aboutCreator, icon, name, link)
-						elif cmd == "help":
+						elif cmd == "kontl":
 							helpMessage = menuHelp()
 							contact = client.getContact(sender)
-							icon = "https://cdn.icon-icons.com/icons2/909/PNG/512/code_icon-icons.com_70999.png"
-							name = "dwiwiranatha ηF"
-							link = "https://line.me/ti/p/CmNvfCneIG"
+							icon = "https://c-sf.smule.com/sf/s77/arr/32/26/1bed4ec4-311a-4fcf-95fa-46c97f91e0e8_256.jpg"
+							name = "JANGAN KLIK INI TOLO!"
+							link = "https://keep.line.me/s/ZFKUwAjkQwIV5V50mzpMLGU1ZWM0nd9F31vX3gSTC5M"
 							client.sendFooter(to, helpMessage, icon, name, link)
-						elif cmd == "sayhelp":
+						elif cmd == "/\sayhelp":
 							helpTextToSpeech = menuTextToSpeech()
 							contact = client.getContact(sender)
 							icon = "https://cdn.icon-icons.com/icons2/909/PNG/512/code_icon-icons.com_70999.png"
@@ -261,42 +234,41 @@ def clientBot(op):
 							client.sendFooter(to, helpTextToSpeech, icon, name, link)
 
 						
-						elif cmd == "unsendchat on":
+						elif cmd == "Lloooo":
 							if settings["detectUnsend"] == True:
-								client.sendMessage(to, "ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ ɪs ᴇɴᴀʙʟᴇ")
 							else:
 								settings["detectUnsend"] = True
-								client.sendMessage(to, "sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇ ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ")
-						elif cmd == "unsendchat off":
+						elif cmd == "/\unsendchat off":
 							if settings["detectUnsend"] == False:
 								client.sendMessage(to, "ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ ɪs ᴅɪsᴀʙʟᴇ")
 							else:
 								settings["detectUnsend"] = False
 								client.sendMessage(to, "sᴜᴄᴄᴇssғᴜʟʟʏ ᴅɪsᴀʙʟᴇ ᴅᴇᴛᴇᴄᴛ ᴜɴsᴇɴᴅ")
-						elif cmd == "me":
-							client.sendMention(to, "@!", [sender])
+						elif cmd == "Saya siapa?":
+							client.sendMention(to, "GW @!TOD GA TRIMA LOE?", [sender])
 							client.sendContact(to, sender)
-						elif cmd == "mymid":
+							client.sendImageWithURL(to, "https://4.bp.blogspot.com/-exA69OFhxX0/W2BKiFoOgbI/AAAAAAAAAI4/8VgSZa9vaGMLYCcWJghYY1zC78s8N9fYgCLcBGAs/s1600/1532601829517.jpg")
+						elif cmd == "/\mymid":
 							contact = client.getContact(sender)
 							client.sendMention(to, "@!: {}".format(contact.mid), [sender])
-						elif cmd == "myname":
+						elif cmd == "/\myname":
 							contact = client.getContact(sender)
 							client.sendMention(to, "@!: {}".format(contact.displayName), [sender])
-						elif cmd == "mybio":
+						elif cmd == "/\mybio":
 							contact = client.getContact(sender)
 							client.sendMention(to, "@!: {}".format(contact.statusMessage), [sender])
-						elif cmd == "mypicture":
+						elif cmd == "/\mypicture":
 							contact = client.getContact(sender)
 							client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus))
-						elif cmd == "myvideoprofile":
+						elif cmd == "/\myvideoprofile":
 							contact = client.getContact(sender)
 							if contact.videoProfile == None:
 								return client.sendMessage(to, "ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴀ ᴠɪᴅᴇᴏ ᴘʀᴏғɪʟᴇ")
 							client.sendVideoWithURL(to, "http://dl.profile.line-cdn.net/{}/vp".format(contact.pictureStatus))
-						elif cmd == "mycover":
+						elif cmd == "/\mycover":
 							cover = client.getProfileCoverURL(sender)
 							client.sendImageWithURL(to, str(cover))
-						elif cmd.startswith("mid "):
+						elif cmd.startswith("/\mid "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -307,7 +279,7 @@ def clientBot(op):
 										lists.append(mention["M"])
 								for ls in lists:
 									client.sendMention(to, "@!: {}".format(ls), [ls])
-						elif cmd.startswith("stalkbio "):
+						elif cmd.startswith("/\stalkbio "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -319,7 +291,7 @@ def clientBot(op):
 								for ls in lists:
 									contact = client.getContact(ls)
 									client.sendMention(to, "@!: {}".format(contact.statusMessage), [ls])
-						elif cmd.startswith("stalkpicture "):
+						elif cmd.startswith("/\stalkpicture "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -331,7 +303,7 @@ def clientBot(op):
 								for ls in lists:
 									contact = client.getContact(ls)
 									client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus))
-						elif cmd.startswith("stalkvideoprofile "):
+						elif cmd.startswith("/\stalkvideoprofile "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -345,7 +317,7 @@ def clientBot(op):
 									if contact.videoProfile == None:
 										return client.sendMention(to, "@!ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴀ ᴠɪᴅᴇᴏ ᴘʀᴏғɪʟᴇ", [ls])
 									client.sendVideoWithURL(to, "http://dl.profile.line-cdn.net/{}/vp".format(contact.pictureStatus))
-						elif cmd.startswith("stalkcover "):
+						elif cmd.startswith("/\stalkcover "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -357,7 +329,7 @@ def clientBot(op):
 								for ls in lists:
 									cover = client.getProfileCoverURL(ls)
 									client.sendImageWithURL(to, str(cover))
-						elif cmd == "friendlist":
+						elif cmd == "/\friendlist":
 							contacts = client.getAllContactIds()
 							num = 0
 							result = "| • | < ғʀɪᴇɴᴅ ʟɪsᴛ >"
@@ -367,7 +339,7 @@ def clientBot(op):
 								result += "\n| • | {}. {}".format(num, contact.displayName)
 							result += "\n| • | ᴛᴏᴛᴀʟ {} ғʀɪᴇɴᴅ".format(len(contacts))
 							client.sendMessage(to, result)
-						elif cmd == "blocklist":
+						elif cmd == "/\blocklist":
 							blockeds = client.getBlockedContactIds()
 							num = 0
 							result = "| • | < ʙʟᴏᴄᴋᴇᴅ ʟɪsᴛ >"
@@ -378,20 +350,20 @@ def clientBot(op):
 							result += "\n| • | ᴛᴏᴛᴀʟ {} ʙʟᴏᴄᴋᴇᴅ ]".format(len(blockeds))
 							client.sendMessage(to, result)
 
-						elif cmd == "openqr":
+						elif cmd == "/\openqr":
 							if msg.toType == 2:
 								group = client.getGroup(to)
 								group.preventedJoinByTicket = False
 								client.updateGroup(group)
 								groupUrl = client.reissueGroupTicket(to)
 								client.sendMessage(to, "ǫʀ ɢʀᴏᴜᴘ\n\nᴜʀʟ : line://ti/g/{}".format(groupUrl))
-						elif cmd == "closeqr":
+						elif cmd == "/\closeqr":
 							if msg.toType == 2:
 								group = client.getGroup(to)
 								group.preventedJoinByTicket = True
 								client.updateGroup(group)
 								client.sendMessage(to, "ǫʀ ɢʀᴏᴜᴘ ᴄʟᴏsᴇᴅ")
-						elif cmd == "memberlist":
+						elif cmd == "/\memberlist":
 							if msg.toType == 2:
 								group = client.getGroup(to)
 								num = 0
@@ -401,7 +373,7 @@ def clientBot(op):
 									ret_ += "\n| • | {}. {}".format(num, contact.displayName)
 								ret_ += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴇᴍʙᴇʀ".format(len(group.members))
 								client.sendMessage(to, ret_)
-						elif cmd == "groupinfo":
+						elif cmd == "/\groupinfo":
 							group = client.getGroup(to)
 							try:
 								try:
@@ -434,7 +406,7 @@ def clientBot(op):
 								client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(group.pictureStatus))
 								client.sendMessage(to, str(ret_))
 
-						elif cmd == 'mention':
+						elif cmd == 'secretbotmenu':
 							group = client.getGroup(to)
 							midMembers = [contact.mid for contact in group.members]
 							midSelect = len(midMembers)//100
@@ -448,7 +420,7 @@ def clientBot(op):
 									ret_ += "\n| • | {}. @!".format(str(no))
 								ret_ += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴇɴᴛɪᴏɴ".format(str(len(dataMid)))
 								client.sendMention(to, ret_, dataMid)
-						elif cmd == "spybot on":
+						elif cmd == "/\spybot on":
 							tz = pytz.timezone("Asia/Makassar")
 							timeNow = datetime.now(tz=tz)
 							day = ["sᴜɴᴅᴀʏ", "ᴍᴏɴᴅᴀʏ", "ᴛᴜᴇsᴅᴀʏ", "ᴡᴇᴅɴᴇsᴅᴀʏ", "ᴛʜᴜʀsᴅᴀʏ","ғʀɪᴅᴀʏ", "sᴀᴛᴜʀᴅᴀʏ"]
@@ -479,7 +451,7 @@ def clientBot(op):
 								read['readPoint'][to] = msg_id
 								read['readMember'][to] = []
 								client.sendMessage(to, "sᴇᴛ ʀᴇᴀᴅɪɴɢ ᴘᴏɪɴᴛ : \n{}".format(readTime))
-						elif cmd == "spybot off":
+						elif cmd == "/\spybot off":
 							tz = pytz.timezone("Asia/Makassar")
 							timeNow = datetime.now(tz=tz)
 							day = ["sᴜɴᴅᴀʏ", "ᴍᴏɴᴅᴀʏ", "ᴛᴜᴇsᴅᴀʏ", "ᴡᴇᴅɴᴇsᴅᴀʏ", "ᴛʜᴜʀsᴅᴀʏ","ғʀɪᴅᴀʏ", "sᴀᴛᴜʀᴅᴀʏ"]
@@ -501,7 +473,7 @@ def clientBot(op):
 								except:
 									pass
 								client.sendMessage(to, "ᴅᴇʟᴇᴛᴇ ʀᴇᴀᴅɪɴɢ ᴘᴏɪɴᴛ : \n{}".format(readTime))
-						elif cmd == "scan":
+						elif cmd == "/\scan":
 							if to in read['readPoint']:
 								if read["readMember"][to] == []:
 									return client.sendMessage(to, "sɪʟᴇɴᴛ ʀᴇᴀᴅᴇʀ ɴᴏᴛ ғᴏᴜɴᴅ")
@@ -514,27 +486,25 @@ def clientBot(op):
 									result += "\n| • | ᴛᴏᴛᴀʟ {} ʀᴇᴀᴅᴇʀ".format(str(len(read["readMember"][to])))
 									client.sendMention(to, result, read["readMember"][to])
 									read['readMember'][to] = []
-						elif cmd == "changepictureprofile":
+						elif cmd == "/\changepictureprofile":
 							settings["changePictureProfile"] = True
 							client.sendMessage(to, "ᴘʟᴇᴀsᴇ sᴇɴᴅ ᴛʜᴇ ᴘɪᴄᴛᴜʀᴇ")
-						elif cmd == "changegrouppicture":
+						elif cmd == "/\changegrouppicture":
 							if msg.toType == 2:
 								if to not in settings["changeGroupPicture"]:
 									settings["changeGroupPicture"].append(to)
 								client.sendMessage(to, "ᴘʟᴇᴀsᴇ sᴇɴᴅ ᴛʜᴇ ᴘɪᴄᴛᴜʀᴇ")
-						elif cmd == "macro on":
+						elif cmd == "bcd":
 							if settings["mimic"]["status"] == True:
-								client.sendMessage(to, "ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ ɪs ᴇɴᴀʙʟᴇ")
 							else:
 								settings["mimic"]["status"] = True
-								client.sendMessage(to, "sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇ ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ")
-						elif cmd == "macro off":
+						elif cmd == "/\macro off":
 							if settings["mimic"]["status"] == False:
 								client.sendMessage(to, "ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ ɪs ᴅɪsᴀʙʟᴇ")
 							else:
 								settings["mimic"]["status"] = False
 								client.sendMessage(to, "sᴜᴄᴄᴇssғᴜʟʟʏ ᴅɪsᴀʙʟᴇ ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ")
-						elif cmd == "macrolist":
+						elif cmd == "/\macrolist":
 							if settings["mimic"]["target"] == {}:
 								client.sendMessage(to, "ᴛᴀʀɢᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ")
 							else:
@@ -547,7 +517,7 @@ def clientBot(op):
 									result += "\n| • | {}. @!".format(no)
 								result += "\n| • | ᴛᴏᴛᴀʟ {} ᴍᴀᴄʀᴏ".format(str(len(target)))
 								client.sendMention(to, result, target)
-						elif cmd.startswith("macroadd "):
+						elif cmd.startswith("we "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -559,13 +529,11 @@ def clientBot(op):
 								for ls in lists:
 									try:
 										if ls in settings["mimic"]["target"]:
-											client.sendMessage(to, "ᴛʜᴇ ᴛᴀʀɢᴇᴛ ɪs ᴀʟʀᴇᴀᴅʏ ɪɴ ᴛʜᴇ ʟɪsᴛ")
 										else:
 											settings["mimic"]["target"][ls] = True
-											client.sendMessage(to, "ᴀᴅᴅᴇᴅ ᴛᴀʀɢᴇᴛ sᴜᴄᴄᴇssғᴜʟ")
 									except:
-										client.sendMessage(to, "ᴀᴅᴅᴇᴅ ᴛᴀʀɢᴇᴛ ғᴀɪʟᴇᴅ")
-						elif cmd.startswith("macrodel "):
+										client.sendMessage(to, "CACAD LOE!")
+						elif cmd.startswith("/\macrodel "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
 								mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -958,10 +926,8 @@ def clientBot(op):
 							try:
 								sendTime = unsendTime - unsend[sender]["time"]
 								sendTime = timeChange(sendTime)
-								ret_ = "| • | < ᴜɴsᴇɴᴅ ᴍᴇssᴀɢᴇ >"
-								ret_ += "\n| • | sᴇɴᴅᴇʀ : @!"
-								ret_ += "\n| • | ᴛʏᴘᴇ : ᴛᴇxᴛ"
-								ret_ += "\n| • | ᴛᴇxᴛ : {}".format(unsend[sender]["text"])
+								ret_ = "Aps Unsend-unsend ga jelas tolo!"
+								ret_ += "\nGa trima sini gelud @!"
 								client.sendMention(to, ret_, [contact.mid])
 								del unsend[sender]
 							except:
@@ -970,19 +936,16 @@ def clientBot(op):
 							try:
 								sendTime = unsendTime - unsend[sender]["time"]
 								sendTime = timeChange(sendTime)
-								ret_ = "| • | < ᴜɴsᴇɴᴅ ᴍᴇssᴀɢᴇ >"
-								ret_ += "\n| • | sᴇɴᴅᴇʀ : @!"
-								ret_ += "\n| • | ᴛʏᴘᴇ : ɪᴍᴀɢᴇ"
-								ret_ += "\n| • | ᴛᴇxᴛ : ɴᴏɴᴇ"
+								ret_ = "Idih pict cem begituan malah diunsend"
+								ret_ += "\nFaedahnya apaan anjng @!"
 								client.sendMention(to, ret_, [contact.mid])
-								client.sendImage(to, unsend[sender]["image"])
 								client.deleteFile(unsend[sender]["image"])
 								del unsend[sender]
 							except:
 								client.deleteFile(unsend[sender]["image"])
 								del unsend[sender]
 					else:
-						client.sendMessage(to, "sᴏʀʀʏ ʙᴏᴛ ᴄᴀɴ'ᴛ ᴅᴇᴛᴇᴄᴛ ᴛʜᴇ ᴍᴇssᴀɢᴇ")
+						client.sendMessage(to, "Halah unsend-unsend ae kerjaannya tolo!")
 			except Exception as error:
 				logError(error)
 		backupData()
